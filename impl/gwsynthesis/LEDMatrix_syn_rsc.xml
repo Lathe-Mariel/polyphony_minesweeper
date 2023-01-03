@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="1" Lut="9">
+    <SubModule name="inst_2" Register="210" Alu="9" Lut="476">
+        <SubModule name="m_main_ci_array735" Register="6" Lut="20" Ssram="8"/>
+    </SubModule>
+    <SubModule name="inst_1" Register="23" Alu="21" Lut="8"/>
+</Module>

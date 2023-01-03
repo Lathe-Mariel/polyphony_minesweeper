@@ -1,0 +1,38 @@
+[
+ {
+  "InstFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+  "InstLine" : 3,
+  "InstName" : "top",
+  "ModuleFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+  "ModuleLine" : 3,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+    "InstLine" : 115,
+    "InstName" : "inst_2",
+    "ModuleFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/./LEDMatrixAB_m.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "LEDMatrixAB_m",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/./LEDMatrixAB_m.v",
+      "InstLine" : 431,
+      "InstName" : "m_main_ci_array735",
+      "ModuleFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/polyphony_out.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "BidirectionalSinglePortRam"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+    "InstLine" : 137,
+    "InstName" : "inst_1",
+    "ModuleFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+    "ModuleLine" : 185,
+    "ModuleName" : "timer"
+   }
+  ]
+ }
+]
