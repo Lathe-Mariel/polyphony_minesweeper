@@ -6,13 +6,14 @@ module LEDMatrixAB_m
     input wire rotary_b,
     input wire rotary2_a,
     input wire rotary2_b,
+    input wire rotary_SW,
+    output reg boardLED2 = 0,
     input wire quaterSecondCLK,
     output reg boardLED1 = 0,
     output reg [7:0] row = 0,
     output reg [7:0] col = 0,
     input wire swA,
     input wire swB,
-    input wire rotary_SW,
     input wire rotary2_SW
   );
 
@@ -107,57 +108,54 @@ module LEDMatrixAB_m
   localparam LEDMatrixAB_m_main_ci_L1_b12_S1 = 87;
   localparam LEDMatrixAB_m_main_ci_L1_b13_S0 = 88;
   localparam LEDMatrixAB_m_main_ci_L1_b13_S1 = 89;
-  localparam LEDMatrixAB_m_main_ci_L1_b13_S2 = 90;
-  localparam LEDMatrixAB_m_main_ci_L1_b13_S3 = 91;
-  localparam LEDMatrixAB_m_main_ci_L1_b13_S4 = 92;
-  localparam LEDMatrixAB_m_main_ci_L1_b13_S5 = 93;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen14_S0 = 94;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen14_S1 = 95;
-  localparam LEDMatrixAB_m_main_ci_L1_ifelse31_S0 = 96;
-  localparam LEDMatrixAB_m_main_ci_L1_ifelse31_S1 = 97;
-  localparam LEDMatrixAB_m_main_ci_L1_b15_S0 = 98;
-  localparam LEDMatrixAB_m_main_ci_L1_b15_S1 = 99;
-  localparam LEDMatrixAB_m_main_ci_L1_b15_S2 = 100;
-  localparam LEDMatrixAB_m_main_ci_L1_b15_S3 = 101;
-  localparam LEDMatrixAB_m_main_ci_L1_b15_S4 = 102;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen16_S0 = 103;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen16_S1 = 104;
-  localparam LEDMatrixAB_m_main_ci_L1_ifelse30_S0 = 105;
-  localparam LEDMatrixAB_m_main_ci_L1_ifelse30_S1 = 106;
-  localparam LEDMatrixAB_m_main_ci_L1_b17_S0 = 107;
-  localparam LEDMatrixAB_m_main_ci_L1_b17_S1 = 108;
-  localparam LEDMatrixAB_m_main_ci_L1_b17_S2 = 109;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen18_S0 = 110;
-  localparam LEDMatrixAB_m_main_ci_L1_ifthen18_S1 = 111;
-  localparam LEDMatrixAB_m_main_ci_L1_ifelse29_S0 = 112;
-  localparam LEDMatrixAB_m_main_ci_L1_forelse27_S0 = 113;
-  localparam LEDMatrixAB_m_main_ci_L1_b28_S0 = 114;
-  localparam LEDMatrixAB_m_main_ci_L1_b28_S1 = 115;
-  localparam LEDMatrixAB_m_main_ci_L2_fortest19_S0 = 116;
-  localparam LEDMatrixAB_m_main_ci_L2_forbody20_S0 = 117;
-  localparam LEDMatrixAB_m_main_ci_L2_forbody20_S1 = 118;
-  localparam LEDMatrixAB_m_main_ci_L2_forelse23_S0 = 119;
-  localparam LEDMatrixAB_m_main_ci_L2_forelse23_S1 = 120;
-  localparam LEDMatrixAB_m_main_ci_L2_forelse26_S0 = 121;
-  localparam LEDMatrixAB_m_main_ci_L2_forelse26_S1 = 122;
-  localparam LEDMatrixAB_m_main_ci_L3_fortest21_S0 = 123;
-  localparam LEDMatrixAB_m_main_ci_L3_forbody22_S0 = 124;
-  localparam LEDMatrixAB_m_main_ci_L3_forbody22_S1 = 125;
-  localparam LEDMatrixAB_m_main_ci_L3_forbody22_S2 = 126;
-  localparam LEDMatrixAB_m_main_ci_L3_forbody22_S3 = 127;
-  localparam LEDMatrixAB_m_main_ci_L3_forbody22_S4 = 128;
-  localparam LEDMatrixAB_m_main_ci_L4_fortest24_S0 = 129;
-  localparam LEDMatrixAB_m_main_ci_L4_forbody25_S0 = 130;
-  localparam LEDMatrixAB_m_main_ci_L4_forbody25_S1 = 131;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen14_S0 = 90;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen14_S1 = 91;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse31_S0 = 92;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse31_S1 = 93;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S0 = 94;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S1 = 95;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S2 = 96;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S3 = 97;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S4 = 98;
+  localparam LEDMatrixAB_m_main_ci_L1_b15_S5 = 99;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen16_S0 = 100;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen16_S1 = 101;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse30_S0 = 102;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse30_S1 = 103;
+  localparam LEDMatrixAB_m_main_ci_L1_b17_S0 = 104;
+  localparam LEDMatrixAB_m_main_ci_L1_b17_S1 = 105;
+  localparam LEDMatrixAB_m_main_ci_L1_b17_S2 = 106;
+  localparam LEDMatrixAB_m_main_ci_L1_b17_S3 = 107;
+  localparam LEDMatrixAB_m_main_ci_L1_b17_S4 = 108;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen18_S0 = 109;
+  localparam LEDMatrixAB_m_main_ci_L1_ifthen18_S1 = 110;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse29_S0 = 111;
+  localparam LEDMatrixAB_m_main_ci_L1_ifelse29_S1 = 112;
+  localparam LEDMatrixAB_m_main_ci_L1_b19_S0 = 113;
+  localparam LEDMatrixAB_m_main_ci_L1_b19_S1 = 114;
+  localparam LEDMatrixAB_m_main_ci_L1_b19_S2 = 115;
+  localparam LEDMatrixAB_m_main_ci_L1_forelse28_S0 = 116;
+  localparam LEDMatrixAB_m_main_ci_L1_forelse28_S1 = 117;
+  localparam LEDMatrixAB_m_main_ci_L2_fortest20_S0 = 118;
+  localparam LEDMatrixAB_m_main_ci_L2_forbody21_S0 = 119;
+  localparam LEDMatrixAB_m_main_ci_L2_forbody21_S1 = 120;
+  localparam LEDMatrixAB_m_main_ci_L2_forelse24_S0 = 121;
+  localparam LEDMatrixAB_m_main_ci_L2_forelse24_S1 = 122;
+  localparam LEDMatrixAB_m_main_ci_L2_forelse27_S0 = 123;
+  localparam LEDMatrixAB_m_main_ci_L2_forelse27_S1 = 124;
+  localparam LEDMatrixAB_m_main_ci_L3_fortest22_S0 = 125;
+  localparam LEDMatrixAB_m_main_ci_L3_forbody23_S0 = 126;
+  localparam LEDMatrixAB_m_main_ci_L3_forbody23_S1 = 127;
+  localparam LEDMatrixAB_m_main_ci_L3_forbody23_S2 = 128;
+  localparam LEDMatrixAB_m_main_ci_L3_forbody23_S3 = 129;
+  localparam LEDMatrixAB_m_main_ci_L3_forbody23_S4 = 130;
+  localparam LEDMatrixAB_m_main_ci_L4_fortest25_S0 = 131;
+  localparam LEDMatrixAB_m_main_ci_L4_forbody26_S0 = 132;
+  localparam LEDMatrixAB_m_main_ci_L4_forbody26_S1 = 133;
   
   //signals: 
-  wire m_main_ci_c1033;
-  wire m_main_ci_c1034;
-  wire m_main_ci_c1035;
-  wire m_main_ci_c1036;
-  wire m_main_ci_c1037;
-  wire m_main_ci_c1038;
-  wire m_main_ci_c1039;
+  wire        [7:0] m_main_ci_antiChatter_RESW13;
+  wire        [7:0] m_main_ci_antiChatter_RESW15;
   wire m_main_ci_c1040;
   wire m_main_ci_c1041;
   wire m_main_ci_c1042;
@@ -165,60 +163,65 @@ module LEDMatrixAB_m
   wire m_main_ci_c1044;
   wire m_main_ci_c1045;
   wire m_main_ci_c1046;
-  wire m_main_ci_c618_inl1;
+  wire m_main_ci_c1047;
+  wire m_main_ci_c1048;
+  wire m_main_ci_c1049;
+  wire m_main_ci_c1050;
+  wire m_main_ci_c1051;
+  wire m_main_ci_c1052;
+  wire m_main_ci_c617_inl1;
+  wire m_main_ci_c621;
   wire m_main_ci_c622;
   wire m_main_ci_c623;
-  wire m_main_ci_c624;
-  wire m_main_ci_c626;
+  wire m_main_ci_c625;
+  wire m_main_ci_c627;
   wire m_main_ci_c628;
   wire m_main_ci_c629;
-  wire m_main_ci_c630;
-  wire m_main_ci_c632;
-  wire m_main_ci_c636;
-  wire m_main_ci_c641;
-  wire m_main_ci_c645;
-  wire m_main_ci_c647;
-  wire m_main_ci_c649;
-  wire m_main_ci_c654;
-  wire m_main_ci_c737;
+  wire m_main_ci_c631;
+  wire m_main_ci_c633;
+  wire m_main_ci_c634;
+  wire m_main_ci_c638;
+  wire m_main_ci_c643;
+  wire m_main_ci_c648;
+  wire m_main_ci_c650;
+  wire m_main_ci_c655;
   wire m_main_ci_c738;
   wire m_main_ci_c739;
   wire m_main_ci_c740;
-  wire m_main_ci_c748;
+  wire m_main_ci_c741;
   wire m_main_ci_c749;
   wire m_main_ci_c750;
   wire m_main_ci_c751;
   wire m_main_ci_c752;
-  wire m_main_ci_c754;
+  wire m_main_ci_c753;
   wire m_main_ci_c755;
   wire m_main_ci_c756;
   wire m_main_ci_c757;
   wire m_main_ci_c758;
-  wire m_main_ci_c764;
-  wire m_main_ci_c765;
-  wire m_main_ci_c766;
-  wire m_main_ci_c767;
-  wire m_main_ci_c768;
+  wire m_main_ci_c759;
+  wire m_main_ci_c761;
   wire m_main_ci_c769;
   wire m_main_ci_c770;
   wire m_main_ci_c771;
   wire m_main_ci_c772;
+  wire m_main_ci_c773;
+  wire m_main_ci_c774;
+  wire m_main_ci_c775;
   wire        [5:0] m_main_ci_cursor;
-  wire        [3:0] m_main_ci_loopCounter3;
-  wire        [3:0] m_main_ci_loopCounter5;
+  wire        [2:0] m_main_ci_loopCounter3;
   wire m_main_ci_oldRE2_a7;
   wire m_main_ci_oldRE_a7;
   wire        [5:0] m_main_ci_prev_Cursor;
-  wire        [5:0] m_main_ci_t633;
-  wire        [7:0] m_main_ci_t635;
-  wire        [7:0] m_main_ci_t638;
-  wire        [5:0] m_main_ci_t639;
-  wire        [7:0] m_main_ci_t643;
-  wire        [31:0] m_main_ci_t650;
+  wire        [5:0] m_main_ci_t635;
+  wire        [7:0] m_main_ci_t637;
+  wire        [7:0] m_main_ci_t640;
+  wire        [5:0] m_main_ci_t641;
+  wire        [7:0] m_main_ci_t645;
   wire        [31:0] m_main_ci_t651;
-  wire        [31:0] m_main_ci_t653;
-  wire        [7:0] m_main_ci_t657;
-  wire        [7:0] m_main_ci_t659;
+  wire        [31:0] m_main_ci_t652;
+  wire        [31:0] m_main_ci_t654;
+  wire        [7:0] m_main_ci_t658;
+  wire        [7:0] m_main_ci_t660;
   wire        [7:0] m_main_ci_untiChatter13;
   wire        [7:0] m_main_ci_untiChatter18;
   wire        [7:0] m_main_ci_untiChatter23;
@@ -231,7 +234,8 @@ module LEDMatrixAB_m
   wire        [2:0] m_main_ci_yvalue4;
   wire        [2:0] m_main_ci_yvalue5;
   wire        [2:0] m_main_ci_yvalue6;
-  reg        [3:0] m_main_ci_loopCounter2;
+  reg        [7:0] m_main_ci_antiChatter_RESW12;
+  reg        [2:0] m_main_ci_loopCounter2;
   reg m_main_ci_oldRE2_a2;
   reg m_main_ci_oldRE2_a3;
   reg m_main_ci_oldRE2_a5;
@@ -243,33 +247,34 @@ module LEDMatrixAB_m
   reg        [2:0] m_main_ci_old_xvalue2;
   reg        [2:0] m_main_ci_old_yvalue2;
   reg        [7:0] m_main_ci_state;
-  reg m_main_ci_t621;
-  reg m_main_ci_t625;
-  reg m_main_ci_t627;
-  reg m_main_ci_t631;
-  reg        [7:0] m_main_ci_t634;
-  reg        [7:0] m_main_ci_t637;
-  reg m_main_ci_t640;
-  reg        [7:0] m_main_ci_t642;
-  reg m_main_ci_t644;
-  reg        [7:0] m_main_ci_t652;
-  reg        [7:0] m_main_ci_t656;
-  reg        [7:0] m_main_ci_t658;
+  reg m_main_ci_t620;
+  reg m_main_ci_t624;
+  reg m_main_ci_t626;
+  reg m_main_ci_t630;
+  reg m_main_ci_t632;
+  reg        [7:0] m_main_ci_t636;
+  reg        [7:0] m_main_ci_t639;
+  reg m_main_ci_t642;
+  reg        [7:0] m_main_ci_t644;
+  reg m_main_ci_t646;
+  reg        [7:0] m_main_ci_t653;
+  reg        [7:0] m_main_ci_t657;
+  reg        [7:0] m_main_ci_t659;
   reg        [7:0] m_main_ci_untiChatter12;
   reg        [7:0] m_main_ci_untiChatter22;
   reg        [2:0] m_main_ci_xvalue2;
   reg        [2:0] m_main_ci_yvalue2;
   wire signed [31:0] interval;
-  wire signed [31:0] m_main_ci_counter6094;
+  wire signed [31:0] m_main_ci_counter6084;
   wire signed [31:0] m_main_ci_currentLine5;
   wire signed [31:0] m_main_ci_currentLine6;
   wire signed [31:0] m_main_ci_i_inl15;
   wire signed [31:0] m_main_ci_j5;
   wire signed [31:0] m_main_ci_lightLevel;
-  wire signed [31:0] m_main_ci_t614_inl1;
-  wire signed [31:0] m_main_ci_t648;
-  wire signed [31:0] m_main_ci_t655;
-  reg signed [31:0] m_main_ci_counter6093;
+  wire signed [31:0] m_main_ci_t613_inl1;
+  wire signed [31:0] m_main_ci_t649;
+  wire signed [31:0] m_main_ci_t656;
+  reg signed [31:0] m_main_ci_counter6083;
   reg signed [31:0] m_main_ci_currentLine4;
   reg signed [31:0] m_main_ci_i_inl14;
   reg signed [31:0] m_main_ci_j4;
@@ -281,169 +286,171 @@ module LEDMatrixAB_m
   reg m_main_ci_frameBuffer_req;
   reg m_main_ci_frameBuffer_we;
   //signals: ram
-  wire        [6:0] m_main_ci_array735_ram_addr;
-  wire        [7:0] m_main_ci_array735_ram_d;
-  wire        [6:0] m_main_ci_array735_ram_len;
-  wire        [7:0] m_main_ci_array735_ram_q;
-  wire m_main_ci_array735_ram_we;
+  wire        [6:0] m_main_ci_array736_ram_addr;
+  wire        [7:0] m_main_ci_array736_ram_d;
+  wire        [6:0] m_main_ci_array736_ram_len;
+  wire        [7:0] m_main_ci_array736_ram_q;
+  wire m_main_ci_array736_ram_we;
   //combinations: 
-  function [31:0] m_main_ci_unnamed608 (
-    input [4:0] m_main_ci_unnamed608_in
+  function [31:0] m_main_ci_unnamed607 (
+    input [4:0] m_main_ci_unnamed607_in
   );
   begin
-    case (m_main_ci_unnamed608_in)
+    case (m_main_ci_unnamed607_in)
       0: begin
-        m_main_ci_unnamed608 = 0;
+        m_main_ci_unnamed607 = 0;
       end
       1: begin
-        m_main_ci_unnamed608 = 1;
+        m_main_ci_unnamed607 = 1;
       end
       2: begin
-        m_main_ci_unnamed608 = 2;
+        m_main_ci_unnamed607 = 2;
       end
       3: begin
-        m_main_ci_unnamed608 = 3;
+        m_main_ci_unnamed607 = 3;
       end
       4: begin
-        m_main_ci_unnamed608 = 4;
+        m_main_ci_unnamed607 = 4;
       end
       5: begin
-        m_main_ci_unnamed608 = 5;
+        m_main_ci_unnamed607 = 5;
       end
       6: begin
-        m_main_ci_unnamed608 = 6;
+        m_main_ci_unnamed607 = 6;
       end
       7: begin
-        m_main_ci_unnamed608 = 7;
+        m_main_ci_unnamed607 = 7;
       end
       8: begin
-        m_main_ci_unnamed608 = 8;
+        m_main_ci_unnamed607 = 8;
       end
       9: begin
-        m_main_ci_unnamed608 = 15;
+        m_main_ci_unnamed607 = 15;
       end
     endcase
   end
   endfunction
   assign interval = 5400;
-  assign m_main_ci_c1033 = !m_main_ci_c622;
-  assign m_main_ci_c1034 = (m_main_ci_c622 && m_main_ci_c623);
-  assign m_main_ci_c1035 = (m_main_ci_c1034 && m_main_ci_c624);
-  assign m_main_ci_c1036 = ((m_main_ci_c1034 && m_main_ci_c737) || (m_main_ci_c1034 && m_main_ci_c738));
-  assign m_main_ci_c1037 = !m_main_ci_c628;
-  assign m_main_ci_c1038 = (m_main_ci_c628 && m_main_ci_c629);
-  assign m_main_ci_c1039 = (m_main_ci_c1038 && m_main_ci_c630);
-  assign m_main_ci_c1040 = ((m_main_ci_c1038 && m_main_ci_c739) || (m_main_ci_c1038 && m_main_ci_c740));
-  assign m_main_ci_c1041 = !m_main_ci_c636;
-  assign m_main_ci_c1042 = !m_main_ci_c641;
-  assign m_main_ci_c1043 = !m_main_ci_c645;
-  assign m_main_ci_c1044 = (m_main_ci_c645 && m_main_ci_c647);
-  assign m_main_ci_c1045 = (m_main_ci_c1044 && m_main_ci_c649);
-  assign m_main_ci_c1046 = (m_main_ci_c1044 && m_main_ci_c618_inl1);
-  assign m_main_ci_c618_inl1 = (m_main_ci_i_inl14 < m_main_ci_t614_inl1);
-  assign m_main_ci_c622 = (m_main_ci_oldRE_a2 != m_main_ci_t621);
-  assign m_main_ci_c623 = (m_main_ci_untiChatter13 > 10);
-  assign m_main_ci_c624 = (m_main_ci_oldRE_a2 != 0);
-  assign m_main_ci_c626 = (m_main_ci_t625 != 0);
-  assign m_main_ci_c628 = (m_main_ci_oldRE2_a2 != m_main_ci_t627);
-  assign m_main_ci_c629 = (m_main_ci_untiChatter23 > 10);
-  assign m_main_ci_c630 = (m_main_ci_oldRE2_a2 != 0);
-  assign m_main_ci_c632 = (m_main_ci_t631 != 0);
-  assign m_main_ci_c636 = (m_main_ci_t635 != 0);
-  assign m_main_ci_c641 = (m_main_ci_t640 != 0);
-  assign m_main_ci_c645 = (m_main_ci_loopCounter2 < 8);
-  assign m_main_ci_c647 = (m_main_ci_counter6093 < 10);
-  assign m_main_ci_c649 = (m_main_ci_j4 < 8);
-  assign m_main_ci_c654 = (m_main_ci_t653 > m_main_ci_lightLevel);
-  assign m_main_ci_c737 = (!m_main_ci_c624 && m_main_ci_c626);
-  assign m_main_ci_c738 = (!m_main_ci_c624 && !m_main_ci_c626);
-  assign m_main_ci_c739 = (!m_main_ci_c630 && m_main_ci_c632);
-  assign m_main_ci_c740 = (!m_main_ci_c630 && !m_main_ci_c632);
-  assign m_main_ci_c748 = !m_main_ci_c622;
-  assign m_main_ci_c749 = (m_main_ci_c622 && m_main_ci_c623);
-  assign m_main_ci_c750 = (m_main_ci_c749 && m_main_ci_c624);
-  assign m_main_ci_c751 = (m_main_ci_c749 && m_main_ci_c737);
-  assign m_main_ci_c752 = (m_main_ci_c749 && m_main_ci_c738);
-  assign m_main_ci_c754 = !m_main_ci_c628;
-  assign m_main_ci_c755 = (m_main_ci_c628 && m_main_ci_c629);
-  assign m_main_ci_c756 = (m_main_ci_c755 && m_main_ci_c630);
-  assign m_main_ci_c757 = (m_main_ci_c755 && m_main_ci_c739);
-  assign m_main_ci_c758 = (m_main_ci_c755 && m_main_ci_c740);
-  assign m_main_ci_c764 = !m_main_ci_c645;
-  assign m_main_ci_c765 = (m_main_ci_c645 && m_main_ci_c647);
-  assign m_main_ci_c766 = (m_main_ci_c765 && m_main_ci_c649);
-  assign m_main_ci_c767 = (m_main_ci_c766 && m_main_ci_c654);
-  assign m_main_ci_c768 = (m_main_ci_c765 && m_main_ci_c618_inl1);
-  assign m_main_ci_c769 = (m_main_ci_c750 || m_main_ci_c751);
-  assign m_main_ci_c770 = (m_main_ci_c769 || m_main_ci_c752);
-  assign m_main_ci_c771 = (m_main_ci_c756 || m_main_ci_c757);
-  assign m_main_ci_c772 = (m_main_ci_c771 || m_main_ci_c758);
-  assign m_main_ci_counter6094 = (m_main_ci_counter6093 + 1);
-  assign m_main_ci_currentLine5 = (m_main_ci_currentLine4 | m_main_ci_t655);
-  assign m_main_ci_currentLine6 = m_main_ci_c767 ? m_main_ci_currentLine5 : (m_main_ci_c766 && !m_main_ci_c654) ? m_main_ci_currentLine4 : 'bz;
-  assign m_main_ci_cursor = (m_main_ci_t639 + m_main_ci_yvalue6);
+  assign m_main_ci_antiChatter_RESW13 = (m_main_ci_antiChatter_RESW12 + 1);
+  assign m_main_ci_antiChatter_RESW15 = m_main_ci_c633 ? m_main_ci_antiChatter_RESW13 : m_main_ci_c761 ? 0 : 'bz;
+  assign m_main_ci_c1040 = !m_main_ci_c621;
+  assign m_main_ci_c1041 = (m_main_ci_c621 && m_main_ci_c622);
+  assign m_main_ci_c1042 = (m_main_ci_c1041 && m_main_ci_c623);
+  assign m_main_ci_c1043 = ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739));
+  assign m_main_ci_c1044 = !m_main_ci_c627;
+  assign m_main_ci_c1045 = (m_main_ci_c627 && m_main_ci_c628);
+  assign m_main_ci_c1046 = (m_main_ci_c1045 && m_main_ci_c629);
+  assign m_main_ci_c1047 = ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741));
+  assign m_main_ci_c1048 = !m_main_ci_c634;
+  assign m_main_ci_c1049 = !m_main_ci_c638;
+  assign m_main_ci_c1050 = !m_main_ci_c643;
+  assign m_main_ci_c1051 = (m_main_ci_c648 && m_main_ci_c650);
+  assign m_main_ci_c1052 = (m_main_ci_c648 && m_main_ci_c617_inl1);
+  assign m_main_ci_c617_inl1 = (m_main_ci_i_inl14 < m_main_ci_t613_inl1);
+  assign m_main_ci_c621 = (m_main_ci_oldRE_a2 != m_main_ci_t620);
+  assign m_main_ci_c622 = (m_main_ci_untiChatter13 > 10);
+  assign m_main_ci_c623 = (m_main_ci_oldRE_a2 != 0);
+  assign m_main_ci_c625 = (m_main_ci_t624 != 0);
+  assign m_main_ci_c627 = (m_main_ci_oldRE2_a2 != m_main_ci_t626);
+  assign m_main_ci_c628 = (m_main_ci_untiChatter23 > 10);
+  assign m_main_ci_c629 = (m_main_ci_oldRE2_a2 != 0);
+  assign m_main_ci_c631 = (m_main_ci_t630 != 0);
+  assign m_main_ci_c633 = (m_main_ci_t632 != 0);
+  assign m_main_ci_c634 = (m_main_ci_antiChatter_RESW15 > 10);
+  assign m_main_ci_c638 = (m_main_ci_t637 != 0);
+  assign m_main_ci_c643 = (m_main_ci_t642 != 0);
+  assign m_main_ci_c648 = (m_main_ci_counter6083 < 10);
+  assign m_main_ci_c650 = (m_main_ci_j4 < 8);
+  assign m_main_ci_c655 = (m_main_ci_t654 > m_main_ci_lightLevel);
+  assign m_main_ci_c738 = (!m_main_ci_c623 && m_main_ci_c625);
+  assign m_main_ci_c739 = (!m_main_ci_c623 && !m_main_ci_c625);
+  assign m_main_ci_c740 = (!m_main_ci_c629 && m_main_ci_c631);
+  assign m_main_ci_c741 = (!m_main_ci_c629 && !m_main_ci_c631);
+  assign m_main_ci_c749 = !m_main_ci_c621;
+  assign m_main_ci_c750 = (m_main_ci_c621 && m_main_ci_c622);
+  assign m_main_ci_c751 = (m_main_ci_c750 && m_main_ci_c623);
+  assign m_main_ci_c752 = (m_main_ci_c750 && m_main_ci_c738);
+  assign m_main_ci_c753 = (m_main_ci_c750 && m_main_ci_c739);
+  assign m_main_ci_c755 = !m_main_ci_c627;
+  assign m_main_ci_c756 = (m_main_ci_c627 && m_main_ci_c628);
+  assign m_main_ci_c757 = (m_main_ci_c756 && m_main_ci_c629);
+  assign m_main_ci_c758 = (m_main_ci_c756 && m_main_ci_c740);
+  assign m_main_ci_c759 = (m_main_ci_c756 && m_main_ci_c741);
+  assign m_main_ci_c761 = !m_main_ci_c633;
+  assign m_main_ci_c769 = (m_main_ci_c648 && m_main_ci_c650);
+  assign m_main_ci_c770 = (m_main_ci_c769 && m_main_ci_c655);
+  assign m_main_ci_c771 = (m_main_ci_c648 && m_main_ci_c617_inl1);
+  assign m_main_ci_c772 = (m_main_ci_c752 || m_main_ci_c753);
+  assign m_main_ci_c773 = (m_main_ci_c772 || m_main_ci_c751);
+  assign m_main_ci_c774 = (m_main_ci_c757 || m_main_ci_c759);
+  assign m_main_ci_c775 = (m_main_ci_c774 || m_main_ci_c758);
+  assign m_main_ci_counter6084 = (m_main_ci_counter6083 + 1);
+  assign m_main_ci_currentLine5 = (m_main_ci_currentLine4 | m_main_ci_t656);
+  assign m_main_ci_currentLine6 = m_main_ci_c770 ? m_main_ci_currentLine5 : (m_main_ci_c769 && !m_main_ci_c655) ? m_main_ci_currentLine4 : 'bz;
+  assign m_main_ci_cursor = (m_main_ci_t641 + m_main_ci_yvalue6);
   assign m_main_ci_i_inl15 = (m_main_ci_i_inl14 + 1);
   assign m_main_ci_j5 = (m_main_ci_j4 + 1);
-  assign m_main_ci_lightLevel = m_main_ci_unnamed608(m_main_ci_counter6093);
+  assign m_main_ci_lightLevel = m_main_ci_unnamed607(m_main_ci_counter6083);
   assign m_main_ci_loopCounter3 = (m_main_ci_loopCounter2 + 1);
-  assign m_main_ci_loopCounter5 = m_main_ci_c645 ? m_main_ci_loopCounter3 : m_main_ci_c764 ? 0 : 'bz;
-  assign m_main_ci_oldRE2_a7 = m_main_ci_c772 ? m_main_ci_oldRE2_a5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_oldRE2_a2 : m_main_ci_c754 ? m_main_ci_oldRE2_a6 : 'bz;
-  assign m_main_ci_oldRE_a7 = m_main_ci_c770 ? m_main_ci_oldRE_a5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_oldRE_a2 : m_main_ci_c748 ? m_main_ci_oldRE_a6 : 'bz;
-  assign m_main_ci_prev_Cursor = (m_main_ci_t633 + m_main_ci_old_yvalue2);
-  assign m_main_ci_t614_inl1 = (interval / 2);
-  assign m_main_ci_t633 = (m_main_ci_old_xvalue2 * 8);
-  assign m_main_ci_t635 = (m_main_ci_t634 & 1);
-  assign m_main_ci_t638 = (m_main_ci_t637 | 32);
-  assign m_main_ci_t639 = (m_main_ci_xvalue6 * 8);
-  assign m_main_ci_t643 = (m_main_ci_t642 & 31);
-  assign m_main_ci_t648 = (1 << m_main_ci_loopCounter2);
-  assign m_main_ci_t650 = (m_main_ci_loopCounter2 * 8);
-  assign m_main_ci_t651 = (m_main_ci_t650 + m_main_ci_j4);
-  assign m_main_ci_t653 = (m_main_ci_t652 >>> 1);
-  assign m_main_ci_t655 = (128 >>> m_main_ci_j4);
-  assign m_main_ci_t657 = (m_main_ci_t656 | 32);
-  assign m_main_ci_t659 = (m_main_ci_t658 & 31);
+  assign m_main_ci_oldRE2_a7 = m_main_ci_c775 ? m_main_ci_oldRE2_a5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_oldRE2_a2 : m_main_ci_c755 ? m_main_ci_oldRE2_a6 : 'bz;
+  assign m_main_ci_oldRE_a7 = m_main_ci_c773 ? m_main_ci_oldRE_a5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_oldRE_a2 : m_main_ci_c749 ? m_main_ci_oldRE_a6 : 'bz;
+  assign m_main_ci_prev_Cursor = (m_main_ci_t635 + m_main_ci_old_yvalue2);
+  assign m_main_ci_t613_inl1 = (interval / 2);
+  assign m_main_ci_t635 = (m_main_ci_old_xvalue2 * 8);
+  assign m_main_ci_t637 = (m_main_ci_t636 & 1);
+  assign m_main_ci_t640 = (m_main_ci_t639 | 32);
+  assign m_main_ci_t641 = (m_main_ci_xvalue6 * 8);
+  assign m_main_ci_t645 = (m_main_ci_t644 & 31);
+  assign m_main_ci_t649 = (1 << m_main_ci_loopCounter2);
+  assign m_main_ci_t651 = (m_main_ci_loopCounter2 * 8);
+  assign m_main_ci_t652 = (m_main_ci_t651 + m_main_ci_j4);
+  assign m_main_ci_t654 = (m_main_ci_t653 >>> 1);
+  assign m_main_ci_t656 = (128 >>> m_main_ci_j4);
+  assign m_main_ci_t658 = (m_main_ci_t657 | 32);
+  assign m_main_ci_t660 = (m_main_ci_t659 & 31);
   assign m_main_ci_untiChatter13 = (m_main_ci_untiChatter12 + 1);
-  assign m_main_ci_untiChatter18 = m_main_ci_c770 ? 0 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_untiChatter13 : m_main_ci_c748 ? 0 : 'bz;
+  assign m_main_ci_untiChatter18 = m_main_ci_c773 ? 0 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_untiChatter13 : m_main_ci_c749 ? 0 : 'bz;
   assign m_main_ci_untiChatter23 = (m_main_ci_untiChatter22 + 1);
-  assign m_main_ci_untiChatter28 = m_main_ci_c772 ? 0 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_untiChatter23 : m_main_ci_c754 ? 0 : 'bz;
+  assign m_main_ci_untiChatter28 = m_main_ci_c775 ? 0 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_untiChatter23 : m_main_ci_c755 ? 0 : 'bz;
   assign m_main_ci_xvalue3 = (m_main_ci_xvalue2 - 1);
   assign m_main_ci_xvalue4 = (m_main_ci_xvalue2 + 1);
-  assign m_main_ci_xvalue5 = m_main_ci_c750 ? m_main_ci_xvalue2 : m_main_ci_c751 ? m_main_ci_xvalue3 : m_main_ci_c752 ? m_main_ci_xvalue4 : 'bz;
-  assign m_main_ci_xvalue6 = m_main_ci_c770 ? m_main_ci_xvalue5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_xvalue2 : m_main_ci_c748 ? m_main_ci_xvalue2 : 'bz;
+  assign m_main_ci_xvalue5 = m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz;
+  assign m_main_ci_xvalue6 = m_main_ci_c773 ? m_main_ci_xvalue5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_xvalue2 : m_main_ci_c749 ? m_main_ci_xvalue2 : 'bz;
   assign m_main_ci_yvalue3 = (m_main_ci_yvalue2 + 1);
   assign m_main_ci_yvalue4 = (m_main_ci_yvalue2 - 1);
-  assign m_main_ci_yvalue5 = m_main_ci_c756 ? m_main_ci_yvalue2 : m_main_ci_c757 ? m_main_ci_yvalue3 : m_main_ci_c758 ? m_main_ci_yvalue4 : 'bz;
-  assign m_main_ci_yvalue6 = m_main_ci_c772 ? m_main_ci_yvalue5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_yvalue2 : m_main_ci_c754 ? m_main_ci_yvalue2 : 'bz;
-  //combinations: m_main_ci_array735
-  assign m_main_ci_array735_ram_addr = m_main_ci_frameBuffer_addr;
-  assign m_main_ci_array735_ram_d = m_main_ci_frameBuffer_d;
-  assign m_main_ci_array735_ram_we = m_main_ci_frameBuffer_we;
-  assign m_main_ci_frameBuffer_len = m_main_ci_array735_ram_len;
-  assign m_main_ci_frameBuffer_q = m_main_ci_array735_ram_q;
+  assign m_main_ci_yvalue5 = m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz;
+  assign m_main_ci_yvalue6 = m_main_ci_c775 ? m_main_ci_yvalue5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_yvalue2 : m_main_ci_c755 ? m_main_ci_yvalue2 : 'bz;
+  //combinations: m_main_ci_array736
+  assign m_main_ci_array736_ram_addr = m_main_ci_frameBuffer_addr;
+  assign m_main_ci_array736_ram_d = m_main_ci_frameBuffer_d;
+  assign m_main_ci_array736_ram_we = m_main_ci_frameBuffer_we;
+  assign m_main_ci_frameBuffer_len = m_main_ci_array736_ram_len;
+  assign m_main_ci_frameBuffer_q = m_main_ci_array736_ram_q;
   //sub modules
-  //m_main_ci_array735 instance
+  //m_main_ci_array736 instance
   BidirectionalSinglePortRam#(
     .DATA_WIDTH(8),
     .ADDR_WIDTH(7),
     .RAM_LENGTH(64)
     )
-    m_main_ci_array735(
+    m_main_ci_array736(
       .clk(clk),
       .rst(rst),
-      .ram_addr(m_main_ci_array735_ram_addr),
-      .ram_d(m_main_ci_array735_ram_d),
-      .ram_we(m_main_ci_array735_ram_we),
-      .ram_q(m_main_ci_array735_ram_q),
-      .ram_len(m_main_ci_array735_ram_len)
+      .ram_addr(m_main_ci_array736_ram_addr),
+      .ram_d(m_main_ci_array736_ram_d),
+      .ram_we(m_main_ci_array736_ram_we),
+      .ram_q(m_main_ci_array736_ram_q),
+      .ram_len(m_main_ci_array736_ram_len)
     );
   
   
   always @(posedge clk) begin
     if (rst) begin
       boardLED1 <= 0;
+      boardLED2 <= 0;
       col <= 0;
-      m_main_ci_counter6093 <= 0;
+      m_main_ci_antiChatter_RESW12 <= 0;
+      m_main_ci_counter6083 <= 0;
       m_main_ci_currentLine4 <= 0;
       m_main_ci_frameBuffer_addr <= 0;
       m_main_ci_frameBuffer_d <= 0;
@@ -462,18 +469,19 @@ module LEDMatrixAB_m
       m_main_ci_oldRE_a6 <= 0;
       m_main_ci_old_xvalue2 <= 0;
       m_main_ci_old_yvalue2 <= 0;
-      m_main_ci_t621 <= 0;
-      m_main_ci_t625 <= 0;
-      m_main_ci_t627 <= 0;
-      m_main_ci_t631 <= 0;
-      m_main_ci_t634 <= 0;
-      m_main_ci_t637 <= 0;
-      m_main_ci_t640 <= 0;
+      m_main_ci_t620 <= 0;
+      m_main_ci_t624 <= 0;
+      m_main_ci_t626 <= 0;
+      m_main_ci_t630 <= 0;
+      m_main_ci_t632 <= 0;
+      m_main_ci_t636 <= 0;
+      m_main_ci_t639 <= 0;
       m_main_ci_t642 <= 0;
       m_main_ci_t644 <= 0;
-      m_main_ci_t652 <= 0;
-      m_main_ci_t656 <= 0;
-      m_main_ci_t658 <= 0;
+      m_main_ci_t646 <= 0;
+      m_main_ci_t653 <= 0;
+      m_main_ci_t657 <= 0;
+      m_main_ci_t659 <= 0;
       m_main_ci_untiChatter12 <= 0;
       m_main_ci_untiChatter22 <= 0;
       m_main_ci_xvalue2 <= 0;
@@ -487,6 +495,7 @@ module LEDMatrixAB_m
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
         m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_antiChatter_RESW12 <= 0;
         m_main_ci_loopCounter2 <= 0;
         m_main_ci_oldRE2_a2 <= 0;
         m_main_ci_oldRE_a2 <= 0;
@@ -944,256 +953,219 @@ module LEDMatrixAB_m
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_while2_S0;
       end
       LEDMatrixAB_m_main_ci_L1_while2_S0: begin
-        m_main_ci_t621 <= rotary_a;
+        m_main_ci_t620 <= rotary_a;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_while2_S1;
       end
       LEDMatrixAB_m_main_ci_L1_while2_S1: begin
-        /* m_main_ci_c622 <= (m_main_ci_oldRE_a2 != m_main_ci_t621); */
-        if (m_main_ci_c622) begin
+        /* m_main_ci_c621 <= (m_main_ci_oldRE_a2 != m_main_ci_t620); */
+        if (m_main_ci_c621) begin
           /* m_main_ci_untiChatter13 <= (m_main_ci_untiChatter12 + 1); */
-          /* m_main_ci_c623 <= (m_main_ci_untiChatter13 > 10); */
-          if (m_main_ci_c623) begin
-            m_main_ci_t625 <= rotary_b;
-            /* m_main_ci_c624 <= (m_main_ci_oldRE_a2 != 0); */
+          /* m_main_ci_c622 <= (m_main_ci_untiChatter13 > 10); */
+          if (m_main_ci_c622) begin
+            m_main_ci_t624 <= rotary_b;
+            /* m_main_ci_c623 <= (m_main_ci_oldRE_a2 != 0); */
             /* m_main_ci_xvalue3 <= (m_main_ci_xvalue2 - 1); */
             /* m_main_ci_xvalue4 <= (m_main_ci_xvalue2 + 1); */
-            /* m_main_ci_c1034 <= (m_main_ci_c622 && m_main_ci_c623); */
-            /* m_main_ci_c749 <= (m_main_ci_c622 && m_main_ci_c623); */
-            /* m_main_ci_c750 <= (m_main_ci_c749 && m_main_ci_c624); */
+            /* m_main_ci_c1041 <= (m_main_ci_c621 && m_main_ci_c622); */
+            /* m_main_ci_c750 <= (m_main_ci_c621 && m_main_ci_c622); */
+            /* m_main_ci_c751 <= (m_main_ci_c750 && m_main_ci_c623); */
             m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifthen5_S1;
           end else begin
-            m_main_ci_t627 <= rotary2_a;
-            /* m_main_ci_oldRE_a7 <= m_main_ci_c770 ? m_main_ci_oldRE_a5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_oldRE_a2 : m_main_ci_c748 ? m_main_ci_oldRE_a6 : 'bz; */
-            /* m_main_ci_untiChatter18 <= m_main_ci_c770 ? 0 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_untiChatter13 : m_main_ci_c748 ? 0 : 'bz; */
-            /* m_main_ci_xvalue6 <= m_main_ci_c770 ? m_main_ci_xvalue5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_xvalue2 : m_main_ci_c748 ? m_main_ci_xvalue2 : 'bz; */
+            m_main_ci_t626 <= rotary2_a;
+            /* m_main_ci_oldRE_a7 <= m_main_ci_c773 ? m_main_ci_oldRE_a5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_oldRE_a2 : m_main_ci_c749 ? m_main_ci_oldRE_a6 : 'bz; */
+            /* m_main_ci_untiChatter18 <= m_main_ci_c773 ? 0 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_untiChatter13 : m_main_ci_c749 ? 0 : 'bz; */
+            /* m_main_ci_xvalue6 <= m_main_ci_c773 ? m_main_ci_xvalue5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_xvalue2 : m_main_ci_c749 ? m_main_ci_xvalue2 : 'bz; */
             m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b8_S1;
           end
         end else begin
           m_main_ci_oldRE_a6 <= rotary_a;
-          /* m_main_ci_c1033 <= !m_main_ci_c622; */
-          /* m_main_ci_c748 <= !m_main_ci_c622; */
+          /* m_main_ci_c1040 <= !m_main_ci_c621; */
+          /* m_main_ci_c749 <= !m_main_ci_c621; */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b8_S0;
         end
       end
       LEDMatrixAB_m_main_ci_L1_ifthen5_S1: begin
-        /* m_main_ci_c626 <= (m_main_ci_t625 != 0); */
-        /* m_main_ci_c737 <= (!m_main_ci_c624 && m_main_ci_c626); */
-        /* m_main_ci_c738 <= (!m_main_ci_c624 && !m_main_ci_c626); */
-        /* m_main_ci_c751 <= (m_main_ci_c749 && m_main_ci_c737); */
-        /* m_main_ci_c752 <= (m_main_ci_c749 && m_main_ci_c738); */
-        if (m_main_ci_c624) begin
+        /* m_main_ci_c625 <= (m_main_ci_t624 != 0); */
+        /* m_main_ci_c738 <= (!m_main_ci_c623 && m_main_ci_c625); */
+        /* m_main_ci_c739 <= (!m_main_ci_c623 && !m_main_ci_c625); */
+        /* m_main_ci_c752 <= (m_main_ci_c750 && m_main_ci_c738); */
+        /* m_main_ci_c753 <= (m_main_ci_c750 && m_main_ci_c739); */
+        if (m_main_ci_c623) begin
           m_main_ci_oldRE_a3 <= rotary_a;
-          /* m_main_ci_c1035 <= (m_main_ci_c1034 && m_main_ci_c624); */
+          /* m_main_ci_c1042 <= (m_main_ci_c1041 && m_main_ci_c623); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S0;
-        end else if (m_main_ci_c737) begin
-          m_main_ci_oldRE_a5 <= rotary_a;
-          /* m_main_ci_c1036 <= ((m_main_ci_c1034 && m_main_ci_c737) || (m_main_ci_c1034 && m_main_ci_c738)); */
-          /* m_main_ci_xvalue5 <= m_main_ci_c750 ? m_main_ci_xvalue2 : m_main_ci_c751 ? m_main_ci_xvalue3 : m_main_ci_c752 ? m_main_ci_xvalue4 : 'bz; */
-          /* m_main_ci_c769 <= (m_main_ci_c750 || m_main_ci_c751); */
-          /* m_main_ci_c770 <= (m_main_ci_c769 || m_main_ci_c752); */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
         end else if (m_main_ci_c738) begin
           m_main_ci_oldRE_a5 <= rotary_a;
-          /* m_main_ci_c1036 <= ((m_main_ci_c1034 && m_main_ci_c737) || (m_main_ci_c1034 && m_main_ci_c738)); */
-          /* m_main_ci_xvalue5 <= m_main_ci_c750 ? m_main_ci_xvalue2 : m_main_ci_c751 ? m_main_ci_xvalue3 : m_main_ci_c752 ? m_main_ci_xvalue4 : 'bz; */
-          /* m_main_ci_c769 <= (m_main_ci_c750 || m_main_ci_c751); */
-          /* m_main_ci_c770 <= (m_main_ci_c769 || m_main_ci_c752); */
+          /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
+          /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
+          /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
+          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
+        end else if (m_main_ci_c739) begin
+          m_main_ci_oldRE_a5 <= rotary_a;
+          /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
+          /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
+          /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
+          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
         end
       end
       LEDMatrixAB_m_main_ci_L1_b7_S0: begin
         m_main_ci_oldRE_a5 <= rotary_a;
-        /* m_main_ci_c1036 <= ((m_main_ci_c1034 && m_main_ci_c737) || (m_main_ci_c1034 && m_main_ci_c738)); */
-        /* m_main_ci_xvalue5 <= m_main_ci_c750 ? m_main_ci_xvalue2 : m_main_ci_c751 ? m_main_ci_xvalue3 : m_main_ci_c752 ? m_main_ci_xvalue4 : 'bz; */
-        /* m_main_ci_c769 <= (m_main_ci_c750 || m_main_ci_c751); */
-        /* m_main_ci_c770 <= (m_main_ci_c769 || m_main_ci_c752); */
+        /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
+        /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
+        /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
+        /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b7_S1: begin
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b8_S0;
       end
       LEDMatrixAB_m_main_ci_L1_b8_S0: begin
-        m_main_ci_t627 <= rotary2_a;
-        /* m_main_ci_oldRE_a7 <= m_main_ci_c770 ? m_main_ci_oldRE_a5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_oldRE_a2 : m_main_ci_c748 ? m_main_ci_oldRE_a6 : 'bz; */
-        /* m_main_ci_untiChatter18 <= m_main_ci_c770 ? 0 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_untiChatter13 : m_main_ci_c748 ? 0 : 'bz; */
-        /* m_main_ci_xvalue6 <= m_main_ci_c770 ? m_main_ci_xvalue5 : (m_main_ci_c622 && !m_main_ci_c623) ? m_main_ci_xvalue2 : m_main_ci_c748 ? m_main_ci_xvalue2 : 'bz; */
+        m_main_ci_t626 <= rotary2_a;
+        /* m_main_ci_oldRE_a7 <= m_main_ci_c773 ? m_main_ci_oldRE_a5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_oldRE_a2 : m_main_ci_c749 ? m_main_ci_oldRE_a6 : 'bz; */
+        /* m_main_ci_untiChatter18 <= m_main_ci_c773 ? 0 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_untiChatter13 : m_main_ci_c749 ? 0 : 'bz; */
+        /* m_main_ci_xvalue6 <= m_main_ci_c773 ? m_main_ci_xvalue5 : (m_main_ci_c621 && !m_main_ci_c622) ? m_main_ci_xvalue2 : m_main_ci_c749 ? m_main_ci_xvalue2 : 'bz; */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b8_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b8_S1: begin
-        /* m_main_ci_c628 <= (m_main_ci_oldRE2_a2 != m_main_ci_t627); */
-        if (m_main_ci_c628) begin
+        /* m_main_ci_c627 <= (m_main_ci_oldRE2_a2 != m_main_ci_t626); */
+        if (m_main_ci_c627) begin
           /* m_main_ci_untiChatter23 <= (m_main_ci_untiChatter22 + 1); */
-          /* m_main_ci_c629 <= (m_main_ci_untiChatter23 > 10); */
-          if (m_main_ci_c629) begin
-            m_main_ci_t631 <= rotary2_b;
-            /* m_main_ci_c630 <= (m_main_ci_oldRE2_a2 != 0); */
+          /* m_main_ci_c628 <= (m_main_ci_untiChatter23 > 10); */
+          if (m_main_ci_c628) begin
+            m_main_ci_t630 <= rotary2_b;
+            /* m_main_ci_c629 <= (m_main_ci_oldRE2_a2 != 0); */
             /* m_main_ci_yvalue3 <= (m_main_ci_yvalue2 + 1); */
             /* m_main_ci_yvalue4 <= (m_main_ci_yvalue2 - 1); */
-            /* m_main_ci_c1038 <= (m_main_ci_c628 && m_main_ci_c629); */
-            /* m_main_ci_c755 <= (m_main_ci_c628 && m_main_ci_c629); */
-            /* m_main_ci_c756 <= (m_main_ci_c755 && m_main_ci_c630); */
+            /* m_main_ci_c1045 <= (m_main_ci_c627 && m_main_ci_c628); */
+            /* m_main_ci_c756 <= (m_main_ci_c627 && m_main_ci_c628); */
+            /* m_main_ci_c757 <= (m_main_ci_c756 && m_main_ci_c629); */
             m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifthen10_S1;
           end else begin
-            m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-            m_main_ci_frameBuffer_we <= 0;
-            m_main_ci_frameBuffer_req <= 1;
-            /* m_main_ci_t633 <= (m_main_ci_old_xvalue2 * 8); */
-            /* m_main_ci_prev_Cursor <= (m_main_ci_t633 + m_main_ci_old_yvalue2); */
-            /* m_main_ci_oldRE2_a7 <= m_main_ci_c772 ? m_main_ci_oldRE2_a5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_oldRE2_a2 : m_main_ci_c754 ? m_main_ci_oldRE2_a6 : 'bz; */
-            /* m_main_ci_untiChatter28 <= m_main_ci_c772 ? 0 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_untiChatter23 : m_main_ci_c754 ? 0 : 'bz; */
-            /* m_main_ci_yvalue6 <= m_main_ci_c772 ? m_main_ci_yvalue5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_yvalue2 : m_main_ci_c754 ? m_main_ci_yvalue2 : 'bz; */
+            m_main_ci_t632 <= rotary_SW;
+            /* m_main_ci_antiChatter_RESW13 <= (m_main_ci_antiChatter_RESW12 + 1); */
+            /* m_main_ci_oldRE2_a7 <= m_main_ci_c775 ? m_main_ci_oldRE2_a5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_oldRE2_a2 : m_main_ci_c755 ? m_main_ci_oldRE2_a6 : 'bz; */
+            /* m_main_ci_untiChatter28 <= m_main_ci_c775 ? 0 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_untiChatter23 : m_main_ci_c755 ? 0 : 'bz; */
+            /* m_main_ci_yvalue6 <= m_main_ci_c775 ? m_main_ci_yvalue5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_yvalue2 : m_main_ci_c755 ? m_main_ci_yvalue2 : 'bz; */
             m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S1;
           end
         end else begin
           m_main_ci_oldRE2_a6 <= rotary2_a;
-          /* m_main_ci_c1037 <= !m_main_ci_c628; */
-          /* m_main_ci_c754 <= !m_main_ci_c628; */
+          /* m_main_ci_c1044 <= !m_main_ci_c627; */
+          /* m_main_ci_c755 <= !m_main_ci_c627; */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S0;
         end
       end
       LEDMatrixAB_m_main_ci_L1_ifthen10_S1: begin
-        /* m_main_ci_c632 <= (m_main_ci_t631 != 0); */
-        /* m_main_ci_c739 <= (!m_main_ci_c630 && m_main_ci_c632); */
-        /* m_main_ci_c740 <= (!m_main_ci_c630 && !m_main_ci_c632); */
-        /* m_main_ci_c757 <= (m_main_ci_c755 && m_main_ci_c739); */
-        /* m_main_ci_c758 <= (m_main_ci_c755 && m_main_ci_c740); */
-        if (m_main_ci_c630) begin
+        /* m_main_ci_c631 <= (m_main_ci_t630 != 0); */
+        /* m_main_ci_c740 <= (!m_main_ci_c629 && m_main_ci_c631); */
+        /* m_main_ci_c741 <= (!m_main_ci_c629 && !m_main_ci_c631); */
+        /* m_main_ci_c758 <= (m_main_ci_c756 && m_main_ci_c740); */
+        /* m_main_ci_c759 <= (m_main_ci_c756 && m_main_ci_c741); */
+        if (m_main_ci_c629) begin
           m_main_ci_oldRE2_a3 <= rotary2_a;
-          /* m_main_ci_c1039 <= (m_main_ci_c1038 && m_main_ci_c630); */
+          /* m_main_ci_c1046 <= (m_main_ci_c1045 && m_main_ci_c629); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S0;
-        end else if (m_main_ci_c739) begin
-          m_main_ci_oldRE2_a5 <= rotary2_a;
-          /* m_main_ci_c1040 <= ((m_main_ci_c1038 && m_main_ci_c739) || (m_main_ci_c1038 && m_main_ci_c740)); */
-          /* m_main_ci_yvalue5 <= m_main_ci_c756 ? m_main_ci_yvalue2 : m_main_ci_c757 ? m_main_ci_yvalue3 : m_main_ci_c758 ? m_main_ci_yvalue4 : 'bz; */
-          /* m_main_ci_c771 <= (m_main_ci_c756 || m_main_ci_c757); */
-          /* m_main_ci_c772 <= (m_main_ci_c771 || m_main_ci_c758); */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
         end else if (m_main_ci_c740) begin
           m_main_ci_oldRE2_a5 <= rotary2_a;
-          /* m_main_ci_c1040 <= ((m_main_ci_c1038 && m_main_ci_c739) || (m_main_ci_c1038 && m_main_ci_c740)); */
-          /* m_main_ci_yvalue5 <= m_main_ci_c756 ? m_main_ci_yvalue2 : m_main_ci_c757 ? m_main_ci_yvalue3 : m_main_ci_c758 ? m_main_ci_yvalue4 : 'bz; */
-          /* m_main_ci_c771 <= (m_main_ci_c756 || m_main_ci_c757); */
-          /* m_main_ci_c772 <= (m_main_ci_c771 || m_main_ci_c758); */
+          /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
+          /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
+          /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+          /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
+        end else if (m_main_ci_c741) begin
+          m_main_ci_oldRE2_a5 <= rotary2_a;
+          /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
+          /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
+          /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+          /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
         end
       end
       LEDMatrixAB_m_main_ci_L1_b12_S0: begin
         m_main_ci_oldRE2_a5 <= rotary2_a;
-        /* m_main_ci_c1040 <= ((m_main_ci_c1038 && m_main_ci_c739) || (m_main_ci_c1038 && m_main_ci_c740)); */
-        /* m_main_ci_yvalue5 <= m_main_ci_c756 ? m_main_ci_yvalue2 : m_main_ci_c757 ? m_main_ci_yvalue3 : m_main_ci_c758 ? m_main_ci_yvalue4 : 'bz; */
-        /* m_main_ci_c771 <= (m_main_ci_c756 || m_main_ci_c757); */
-        /* m_main_ci_c772 <= (m_main_ci_c771 || m_main_ci_c758); */
+        /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
+        /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
+        /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+        /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b12_S1: begin
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S0;
       end
       LEDMatrixAB_m_main_ci_L1_b13_S0: begin
-        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-        m_main_ci_frameBuffer_we <= 0;
-        m_main_ci_frameBuffer_req <= 1;
-        /* m_main_ci_t633 <= (m_main_ci_old_xvalue2 * 8); */
-        /* m_main_ci_prev_Cursor <= (m_main_ci_t633 + m_main_ci_old_yvalue2); */
-        /* m_main_ci_oldRE2_a7 <= m_main_ci_c772 ? m_main_ci_oldRE2_a5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_oldRE2_a2 : m_main_ci_c754 ? m_main_ci_oldRE2_a6 : 'bz; */
-        /* m_main_ci_untiChatter28 <= m_main_ci_c772 ? 0 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_untiChatter23 : m_main_ci_c754 ? 0 : 'bz; */
-        /* m_main_ci_yvalue6 <= m_main_ci_c772 ? m_main_ci_yvalue5 : (m_main_ci_c628 && !m_main_ci_c629) ? m_main_ci_yvalue2 : m_main_ci_c754 ? m_main_ci_yvalue2 : 'bz; */
+        m_main_ci_t632 <= rotary_SW;
+        /* m_main_ci_antiChatter_RESW13 <= (m_main_ci_antiChatter_RESW12 + 1); */
+        /* m_main_ci_oldRE2_a7 <= m_main_ci_c775 ? m_main_ci_oldRE2_a5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_oldRE2_a2 : m_main_ci_c755 ? m_main_ci_oldRE2_a6 : 'bz; */
+        /* m_main_ci_untiChatter28 <= m_main_ci_c775 ? 0 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_untiChatter23 : m_main_ci_c755 ? 0 : 'bz; */
+        /* m_main_ci_yvalue6 <= m_main_ci_c775 ? m_main_ci_yvalue5 : (m_main_ci_c627 && !m_main_ci_c628) ? m_main_ci_yvalue2 : m_main_ci_c755 ? m_main_ci_yvalue2 : 'bz; */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b13_S1: begin
-        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-        m_main_ci_frameBuffer_we <= 0;
-        m_main_ci_frameBuffer_req <= 1;
-        /*wait for output of m_main_ci_frameBuffer*/
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S2;
-      end
-      LEDMatrixAB_m_main_ci_L1_b13_S2: begin
-        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-        m_main_ci_frameBuffer_we <= 0;
-        m_main_ci_frameBuffer_req <= 1;
-        /*wait for output of m_main_ci_frameBuffer*/
-        m_main_ci_t634 <= m_main_ci_frameBuffer_q;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S3;
-      end
-      LEDMatrixAB_m_main_ci_L1_b13_S3: begin
-        /*wait for output of m_main_ci_frameBuffer*/
-        m_main_ci_t637 <= m_main_ci_frameBuffer_q;
-        /* m_main_ci_t635 <= (m_main_ci_t634 & 1); */
-        /* m_main_ci_c636 <= (m_main_ci_t635 != 0); */
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S4;
-      end
-      LEDMatrixAB_m_main_ci_L1_b13_S4: begin
-        m_main_ci_t658 <= m_main_ci_frameBuffer_q;
-        m_main_ci_frameBuffer_req <= 0;
-        /* m_main_ci_t638 <= (m_main_ci_t637 | 32); */
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b13_S5;
-      end
-      LEDMatrixAB_m_main_ci_L1_b13_S5: begin
-        /* m_main_ci_t659 <= (m_main_ci_t658 & 31); */
-        if (m_main_ci_c636) begin
-          m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-          m_main_ci_frameBuffer_we <= 1;
-          m_main_ci_frameBuffer_req <= 1;
-          m_main_ci_frameBuffer_d <= m_main_ci_t638;
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifthen14_S1;
+        /* m_main_ci_c633 <= (m_main_ci_t632 != 0); */
+        /* m_main_ci_c761 <= !m_main_ci_c633; */
+        /* m_main_ci_antiChatter_RESW15 <= m_main_ci_c633 ? m_main_ci_antiChatter_RESW13 : m_main_ci_c761 ? 0 : 'bz; */
+        /* m_main_ci_c634 <= (m_main_ci_antiChatter_RESW15 > 10); */
+        if (m_main_ci_c634) begin
+          boardLED2 <= 1;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S0;
         end else begin
-          m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
-          m_main_ci_frameBuffer_we <= 1;
-          m_main_ci_frameBuffer_req <= 1;
-          m_main_ci_frameBuffer_d <= m_main_ci_t659;
-          /* m_main_ci_c1041 <= !m_main_ci_c636; */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifelse31_S1;
+          boardLED2 <= 0;
+          /* m_main_ci_c1048 <= !m_main_ci_c634; */
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S0;
         end
       end
-      LEDMatrixAB_m_main_ci_L1_ifthen14_S1: begin
-        m_main_ci_frameBuffer_req <= 0;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S0;
-      end
-      LEDMatrixAB_m_main_ci_L1_ifelse31_S1: begin
-        m_main_ci_frameBuffer_req <= 0;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S0;
-      end
       LEDMatrixAB_m_main_ci_L1_b15_S0: begin
-        m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
         m_main_ci_frameBuffer_we <= 0;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_t640 <= quaterSecondCLK;
-        /* m_main_ci_t639 <= (m_main_ci_xvalue6 * 8); */
-        /* m_main_ci_cursor <= (m_main_ci_t639 + m_main_ci_yvalue6); */
+        /* m_main_ci_t635 <= (m_main_ci_old_xvalue2 * 8); */
+        /* m_main_ci_prev_Cursor <= (m_main_ci_t635 + m_main_ci_old_yvalue2); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b15_S1: begin
-        m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
         m_main_ci_frameBuffer_we <= 0;
         m_main_ci_frameBuffer_req <= 1;
         /*wait for output of m_main_ci_frameBuffer*/
-        /* m_main_ci_c641 <= (m_main_ci_t640 != 0); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S2;
       end
       LEDMatrixAB_m_main_ci_L1_b15_S2: begin
+        m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
+        m_main_ci_frameBuffer_we <= 0;
+        m_main_ci_frameBuffer_req <= 1;
         /*wait for output of m_main_ci_frameBuffer*/
-        m_main_ci_t642 <= m_main_ci_frameBuffer_q;
+        m_main_ci_t636 <= m_main_ci_frameBuffer_q;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S3;
       end
       LEDMatrixAB_m_main_ci_L1_b15_S3: begin
-        m_main_ci_t656 <= m_main_ci_frameBuffer_q;
-        m_main_ci_frameBuffer_req <= 0;
-        /* m_main_ci_t643 <= (m_main_ci_t642 & 31); */
+        /*wait for output of m_main_ci_frameBuffer*/
+        m_main_ci_t639 <= m_main_ci_frameBuffer_q;
+        /* m_main_ci_t637 <= (m_main_ci_t636 & 1); */
+        /* m_main_ci_c638 <= (m_main_ci_t637 != 0); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S4;
       end
       LEDMatrixAB_m_main_ci_L1_b15_S4: begin
-        /* m_main_ci_t657 <= (m_main_ci_t656 | 32); */
-        if (m_main_ci_c641) begin
-          m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+        m_main_ci_t659 <= m_main_ci_frameBuffer_q;
+        m_main_ci_frameBuffer_req <= 0;
+        /* m_main_ci_t640 <= (m_main_ci_t639 | 32); */
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b15_S5;
+      end
+      LEDMatrixAB_m_main_ci_L1_b15_S5: begin
+        /* m_main_ci_t660 <= (m_main_ci_t659 & 31); */
+        if (m_main_ci_c638) begin
+          m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
           m_main_ci_frameBuffer_we <= 1;
           m_main_ci_frameBuffer_req <= 1;
-          m_main_ci_frameBuffer_d <= m_main_ci_t643;
+          m_main_ci_frameBuffer_d <= m_main_ci_t640;
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifthen16_S1;
         end else begin
-          m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+          m_main_ci_frameBuffer_addr <= m_main_ci_prev_Cursor;
           m_main_ci_frameBuffer_we <= 1;
           m_main_ci_frameBuffer_req <= 1;
-          m_main_ci_frameBuffer_d <= m_main_ci_t657;
-          /* m_main_ci_c1042 <= !m_main_ci_c641; */
+          m_main_ci_frameBuffer_d <= m_main_ci_t660;
+          /* m_main_ci_c1049 <= !m_main_ci_c638; */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifelse30_S1;
         end
       end
@@ -1206,104 +1178,142 @@ module LEDMatrixAB_m
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b17_S0;
       end
       LEDMatrixAB_m_main_ci_L1_b17_S0: begin
-        m_main_ci_t644 <= quaterSecondCLK;
-        /* m_main_ci_c645 <= (m_main_ci_loopCounter2 < 8); */
+        m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+        m_main_ci_frameBuffer_we <= 0;
+        m_main_ci_frameBuffer_req <= 1;
+        m_main_ci_t642 <= quaterSecondCLK;
+        /* m_main_ci_t641 <= (m_main_ci_xvalue6 * 8); */
+        /* m_main_ci_cursor <= (m_main_ci_t641 + m_main_ci_yvalue6); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b17_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b17_S1: begin
-        boardLED1 <= m_main_ci_t644;
+        m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+        m_main_ci_frameBuffer_we <= 0;
+        m_main_ci_frameBuffer_req <= 1;
+        /*wait for output of m_main_ci_frameBuffer*/
+        /* m_main_ci_c643 <= (m_main_ci_t642 != 0); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b17_S2;
       end
       LEDMatrixAB_m_main_ci_L1_b17_S2: begin
-        if (m_main_ci_c645) begin
-          m_main_ci_counter6093 <= 0;
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L2_fortest19_S0;
+        /*wait for output of m_main_ci_frameBuffer*/
+        m_main_ci_t644 <= m_main_ci_frameBuffer_q;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b17_S3;
+      end
+      LEDMatrixAB_m_main_ci_L1_b17_S3: begin
+        m_main_ci_t657 <= m_main_ci_frameBuffer_q;
+        m_main_ci_frameBuffer_req <= 0;
+        /* m_main_ci_t645 <= (m_main_ci_t644 & 31); */
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b17_S4;
+      end
+      LEDMatrixAB_m_main_ci_L1_b17_S4: begin
+        /* m_main_ci_t658 <= (m_main_ci_t657 | 32); */
+        if (m_main_ci_c643) begin
+          m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+          m_main_ci_frameBuffer_we <= 1;
+          m_main_ci_frameBuffer_req <= 1;
+          m_main_ci_frameBuffer_d <= m_main_ci_t645;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifthen18_S1;
         end else begin
-          /* m_main_ci_c1043 <= !m_main_ci_c645; */
-          /* m_main_ci_c764 <= !m_main_ci_c645; */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b28_S0;
+          m_main_ci_frameBuffer_addr <= m_main_ci_cursor;
+          m_main_ci_frameBuffer_we <= 1;
+          m_main_ci_frameBuffer_req <= 1;
+          m_main_ci_frameBuffer_d <= m_main_ci_t658;
+          /* m_main_ci_c1050 <= !m_main_ci_c643; */
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_ifelse29_S1;
         end
       end
-      LEDMatrixAB_m_main_ci_L1_b28_S0: begin
-        /* m_main_ci_loopCounter5 <= m_main_ci_c645 ? m_main_ci_loopCounter3 : m_main_ci_c764 ? 0 : 'bz; */
-        m_main_ci_loopCounter2 <= m_main_ci_loopCounter5;
-        m_main_ci_oldRE2_a2 <= m_main_ci_oldRE2_a7;
-        m_main_ci_oldRE_a2 <= m_main_ci_oldRE_a7;
-        m_main_ci_old_xvalue2 <= m_main_ci_xvalue6;
-        m_main_ci_old_yvalue2 <= m_main_ci_yvalue6;
-        m_main_ci_untiChatter12 <= m_main_ci_untiChatter18;
-        m_main_ci_untiChatter22 <= m_main_ci_untiChatter28;
-        m_main_ci_xvalue2 <= m_main_ci_xvalue6;
-        m_main_ci_yvalue2 <= m_main_ci_yvalue6;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_while2_S0;
+      LEDMatrixAB_m_main_ci_L1_ifthen18_S1: begin
+        m_main_ci_frameBuffer_req <= 0;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b19_S0;
       end
-      LEDMatrixAB_m_main_ci_L2_fortest19_S0: begin
-        /* m_main_ci_c647 <= (m_main_ci_counter6093 < 10); */
-        if (m_main_ci_c647) begin
-          row <= m_main_ci_t648;
-          /* m_main_ci_lightLevel <= m_main_ci_unnamed608(m_main_ci_counter6093); */
-          /* m_main_ci_t648 <= (1 << m_main_ci_loopCounter2); */
+      LEDMatrixAB_m_main_ci_L1_ifelse29_S1: begin
+        m_main_ci_frameBuffer_req <= 0;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b19_S0;
+      end
+      LEDMatrixAB_m_main_ci_L1_b19_S0: begin
+        m_main_ci_t646 <= quaterSecondCLK;
+        m_main_ci_counter6083 <= 0;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b19_S1;
+      end
+      LEDMatrixAB_m_main_ci_L1_b19_S1: begin
+        boardLED1 <= m_main_ci_t646;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L2_fortest20_S0;
+      end
+      LEDMatrixAB_m_main_ci_L2_fortest20_S0: begin
+        /* m_main_ci_c648 <= (m_main_ci_counter6083 < 10); */
+        if (m_main_ci_c648) begin
+          row <= m_main_ci_t649;
+          /* m_main_ci_lightLevel <= m_main_ci_unnamed607(m_main_ci_counter6083); */
+          /* m_main_ci_t649 <= (1 << m_main_ci_loopCounter2); */
           m_main_ci_currentLine4 <= 0;
           m_main_ci_j4 <= 0;
-          /* m_main_ci_c1044 <= (m_main_ci_c645 && m_main_ci_c647); */
-          /* m_main_ci_c765 <= (m_main_ci_c645 && m_main_ci_c647); */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_fortest21_S0;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_fortest22_S0;
         end else begin
           /* m_main_ci_loopCounter3 <= (m_main_ci_loopCounter2 + 1); */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b28_S0;
+          m_main_ci_loopCounter2 <= m_main_ci_loopCounter3;
+          m_main_ci_antiChatter_RESW12 <= m_main_ci_antiChatter_RESW15;
+          m_main_ci_oldRE2_a2 <= m_main_ci_oldRE2_a7;
+          m_main_ci_oldRE_a2 <= m_main_ci_oldRE_a7;
+          m_main_ci_old_xvalue2 <= m_main_ci_xvalue6;
+          m_main_ci_old_yvalue2 <= m_main_ci_yvalue6;
+          m_main_ci_untiChatter12 <= m_main_ci_untiChatter18;
+          m_main_ci_untiChatter22 <= m_main_ci_untiChatter28;
+          m_main_ci_xvalue2 <= m_main_ci_xvalue6;
+          m_main_ci_yvalue2 <= m_main_ci_yvalue6;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_while2_S0;
         end
       end
-      LEDMatrixAB_m_main_ci_L3_fortest21_S0: begin
-        /* m_main_ci_c649 <= (m_main_ci_j4 < 8); */
-        if (m_main_ci_c649) begin
-          m_main_ci_frameBuffer_addr <= m_main_ci_t651;
+      LEDMatrixAB_m_main_ci_L3_fortest22_S0: begin
+        /* m_main_ci_c650 <= (m_main_ci_j4 < 8); */
+        if (m_main_ci_c650) begin
+          m_main_ci_frameBuffer_addr <= m_main_ci_t652;
           m_main_ci_frameBuffer_we <= 0;
           m_main_ci_frameBuffer_req <= 1;
-          /* m_main_ci_t650 <= (m_main_ci_loopCounter2 * 8); */
-          /* m_main_ci_t655 <= (128 >>> m_main_ci_j4); */
+          /* m_main_ci_t651 <= (m_main_ci_loopCounter2 * 8); */
+          /* m_main_ci_t656 <= (128 >>> m_main_ci_j4); */
           /* m_main_ci_j5 <= (m_main_ci_j4 + 1); */
-          /* m_main_ci_c1045 <= (m_main_ci_c1044 && m_main_ci_c649); */
-          /* m_main_ci_c766 <= (m_main_ci_c765 && m_main_ci_c649); */
-          /* m_main_ci_t651 <= (m_main_ci_t650 + m_main_ci_j4); */
-          /* m_main_ci_currentLine5 <= (m_main_ci_currentLine4 | m_main_ci_t655); */
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody22_S1;
+          /* m_main_ci_c1051 <= (m_main_ci_c648 && m_main_ci_c650); */
+          /* m_main_ci_c769 <= (m_main_ci_c648 && m_main_ci_c650); */
+          /* m_main_ci_t652 <= (m_main_ci_t651 + m_main_ci_j4); */
+          /* m_main_ci_currentLine5 <= (m_main_ci_currentLine4 | m_main_ci_t656); */
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody23_S1;
         end else begin
           col <= m_main_ci_currentLine4;
-          /* m_main_ci_t614_inl1 <= (interval / 2); */
+          /* m_main_ci_t613_inl1 <= (interval / 2); */
           m_main_ci_i_inl14 <= 0;
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L4_fortest24_S0;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L4_fortest25_S0;
         end
       end
-      LEDMatrixAB_m_main_ci_L3_forbody22_S1: begin
+      LEDMatrixAB_m_main_ci_L3_forbody23_S1: begin
         /*wait for output of m_main_ci_frameBuffer*/
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody22_S2;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody23_S2;
       end
-      LEDMatrixAB_m_main_ci_L3_forbody22_S2: begin
-        m_main_ci_t652 <= m_main_ci_frameBuffer_q;
+      LEDMatrixAB_m_main_ci_L3_forbody23_S2: begin
+        m_main_ci_t653 <= m_main_ci_frameBuffer_q;
         m_main_ci_frameBuffer_req <= 0;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody22_S3;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_forbody23_S3;
       end
-      LEDMatrixAB_m_main_ci_L3_forbody22_S3: begin
-        /* m_main_ci_t653 <= (m_main_ci_t652 >>> 1); */
-        /* m_main_ci_c654 <= (m_main_ci_t653 > m_main_ci_lightLevel); */
-        /* m_main_ci_c767 <= (m_main_ci_c766 && m_main_ci_c654); */
-        /* m_main_ci_currentLine6 <= m_main_ci_c767 ? m_main_ci_currentLine5 : (m_main_ci_c766 && !m_main_ci_c654) ? m_main_ci_currentLine4 : 'bz; */
+      LEDMatrixAB_m_main_ci_L3_forbody23_S3: begin
+        /* m_main_ci_t654 <= (m_main_ci_t653 >>> 1); */
+        /* m_main_ci_c655 <= (m_main_ci_t654 > m_main_ci_lightLevel); */
+        /* m_main_ci_c770 <= (m_main_ci_c769 && m_main_ci_c655); */
+        /* m_main_ci_currentLine6 <= m_main_ci_c770 ? m_main_ci_currentLine5 : (m_main_ci_c769 && !m_main_ci_c655) ? m_main_ci_currentLine4 : 'bz; */
         m_main_ci_currentLine4 <= m_main_ci_currentLine6;
         m_main_ci_j4 <= m_main_ci_j5;
-        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_fortest21_S0;
+        m_main_ci_state <= LEDMatrixAB_m_main_ci_L3_fortest22_S0;
       end
-      LEDMatrixAB_m_main_ci_L4_fortest24_S0: begin
-        /* m_main_ci_c618_inl1 <= (m_main_ci_i_inl14 < m_main_ci_t614_inl1); */
-        if (m_main_ci_c618_inl1) begin
+      LEDMatrixAB_m_main_ci_L4_fortest25_S0: begin
+        /* m_main_ci_c617_inl1 <= (m_main_ci_i_inl14 < m_main_ci_t613_inl1); */
+        if (m_main_ci_c617_inl1) begin
           /* m_main_ci_i_inl15 <= (m_main_ci_i_inl14 + 1); */
-          /* m_main_ci_c1046 <= (m_main_ci_c1044 && m_main_ci_c618_inl1); */
-          /* m_main_ci_c768 <= (m_main_ci_c765 && m_main_ci_c618_inl1); */
+          /* m_main_ci_c1052 <= (m_main_ci_c648 && m_main_ci_c617_inl1); */
+          /* m_main_ci_c771 <= (m_main_ci_c648 && m_main_ci_c617_inl1); */
           m_main_ci_i_inl14 <= m_main_ci_i_inl15;
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L4_fortest24_S0;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L4_fortest25_S0;
         end else begin
-          /* m_main_ci_counter6094 <= (m_main_ci_counter6093 + 1); */
-          m_main_ci_counter6093 <= m_main_ci_counter6094;
-          m_main_ci_state <= LEDMatrixAB_m_main_ci_L2_fortest19_S0;
+          /* m_main_ci_counter6084 <= (m_main_ci_counter6083 + 1); */
+          m_main_ci_counter6083 <= m_main_ci_counter6084;
+          m_main_ci_state <= LEDMatrixAB_m_main_ci_L2_fortest20_S0;
         end
       end
       endcase

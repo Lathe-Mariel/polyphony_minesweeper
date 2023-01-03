@@ -1,7 +1,7 @@
-Reading netlist file: "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\gwsynthesis\LEDMatrix.vg"
-Parsing netlist file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\gwsynthesis\LEDMatrix.vg" completed
+Reading netlist file: "D:\Git\gowin\polyphony_minesweeper\impl\gwsynthesis\LEDMatrix.vg"
+Parsing netlist file "D:\Git\gowin\polyphony_minesweeper\impl\gwsynthesis\LEDMatrix.vg" completed
 Processing netlist completed
-Reading constraint file: "D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.cst"
+Reading constraint file: "D:\Git\gowin\polyphony_minesweeper\src\top.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -20,10 +20,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\LEDMatrix.power.html" completed
-Generate file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\LEDMatrix.pin.html" completed
-Generate file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\LEDMatrix.rpt.html" completed
-Generate file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\LEDMatrix.rpt.txt" completed
-Generate file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\LEDMatrix.tr.html" completed
-Tue Jan 03 20:32:11 2023
+Generate file "D:\Git\gowin\polyphony_minesweeper\impl\pnr\LEDMatrix.power.html" completed
+Generate file "D:\Git\gowin\polyphony_minesweeper\impl\pnr\LEDMatrix.pin.html" completed
+Generate file "D:\Git\gowin\polyphony_minesweeper\impl\pnr\LEDMatrix.rpt.html" completed
+Generate file "D:\Git\gowin\polyphony_minesweeper\impl\pnr\LEDMatrix.rpt.txt" completed
+Generate file "D:\Git\gowin\polyphony_minesweeper\impl\pnr\LEDMatrix.tr.html" completed
+Wed Jan 04 05:09:47 2023
 

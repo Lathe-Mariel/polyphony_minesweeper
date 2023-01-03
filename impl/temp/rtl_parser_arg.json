@@ -1,11 +1,11 @@
 {
  "Files" : [
   {
-   "Path" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/polyphony_out.v",
+   "Path" : "D:/Git/gowin/polyphony_minesweeper/src/polyphony_out.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/src/top.sv",
+   "Path" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
    "Type" : "verilog"
   }
  ],
@@ -13,7 +13,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "D:/Git/gowin/PolyphonyMatrix_MineSweaper/impl/temp/rtl_parser.result",
+ "ResultFile" : "D:/Git/gowin/polyphony_minesweeper/impl/temp/rtl_parser.result",
  "Top" : "",
  "VerilogStd" : "sysv",
  "VhdlStd" : "vhdl_93"

@@ -13,6 +13,7 @@ module top (
   input  wire rotary2_SW,
   output wire io86,
   output wire boardLED1,
+  output wire boardLED2,
 
   output wire [7:0] anode,
   output wire [7:0] cathode
@@ -116,6 +117,7 @@ module top (
     .clk(clk),
     .rst(1'b0),
     .boardLED1(boardLED1),
+    .boardLED2(boardLED2),
     .quaterSecondCLK(quaterSecondCLK),
 
     .swA(sw1),

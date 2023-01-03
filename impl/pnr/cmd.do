@@ -1,8 +1,8 @@
--d D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\gwsynthesis\LEDMatrix.vg
+-d D:\Git\gowin\polyphony_minesweeper\impl\gwsynthesis\LEDMatrix.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.cst
--cfg D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\pnr\device.cfg
+-cst D:\Git\gowin\polyphony_minesweeper\src\top.cst
+-cfg D:\Git\gowin\polyphony_minesweeper\impl\pnr\device.cfg
 -bit
 -tr
 -ph

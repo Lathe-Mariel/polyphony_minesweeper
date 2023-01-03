@@ -1,46 +1,47 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v'
-Analyzing included file 'D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v":1)
-WARN  (EX2478) : Non-net output port 'boardLED1' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":10)
-WARN  (EX2478) : Non-net output port 'row' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":11)
-WARN  (EX2478) : Non-net output port 'col' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":12)
-Back to file 'D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v":1)
-Analyzing Verilog file 'D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv'
-Compiling module 'top'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":3)
-Compiling module 'LEDMatrixAB_m'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":1)
-WARN  (EX3696) : Use of 'm_main_ci_unnamed608' without initialization in static subprogram 'm_main_ci_unnamed608' may create unintended latch behavior("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":290)
-WARN  (EX2420) : Latch inferred for net 'm_main_ci_unnamed608[31]'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":290)
-WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":388)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 4("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":389)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 1("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":390)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 1("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":391)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":406)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":407)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":408)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":409)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":410)
-WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":411)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":412)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":413)
-WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":414)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":415)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":416)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":417)
-Compiling module 'BidirectionalSinglePortRam(ADDR_WIDTH=7,RAM_LENGTH=64)'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v":2)
-Extracting RAM for identifier 'mem'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v":18)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\polyphony_out.v":33)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":1243)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 7("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":1259)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\.\LEDMatrixAB_m.v":1271)
-Compiling module 'timer(COUNT_MAX=3375000)'("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":185)
-WARN  (EX3791) : Expression size 23 truncated to fit in target size 22("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":199)
-WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":143)
+Analyzing Verilog file 'D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v'
+Analyzing included file 'D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v'("D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v":1)
+WARN  (EX2478) : Non-net output port 'boardLED2' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":10)
+WARN  (EX2478) : Non-net output port 'boardLED1' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":12)
+WARN  (EX2478) : Non-net output port 'row' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":13)
+WARN  (EX2478) : Non-net output port 'col' cannot be initialized at declaration in SystemVerilog mode("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":14)
+Back to file 'D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v'("D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v":1)
+Analyzing Verilog file 'D:\Git\gowin\polyphony_minesweeper\src\top.sv'
+Compiling module 'top'("D:\Git\gowin\polyphony_minesweeper\src\top.sv":3)
+Compiling module 'LEDMatrixAB_m'("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":1)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":334)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":335)
+WARN  (EX3696) : Use of 'm_main_ci_unnamed607' without initialization in static subprogram 'm_main_ci_unnamed607' may create unintended latch behavior("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":295)
+WARN  (EX2420) : Latch inferred for net 'm_main_ci_unnamed607[31]'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":295)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":394)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 1("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":395)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 1("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":396)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":411)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":412)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":413)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":414)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":415)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":416)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":417)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":418)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":419)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":420)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":421)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":422)
+Compiling module 'BidirectionalSinglePortRam(ADDR_WIDTH=7,RAM_LENGTH=64)'("D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v":2)
+Extracting RAM for identifier 'mem'("D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v":18)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("D:\Git\gowin\polyphony_minesweeper\src\polyphony_out.v":33)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":1245)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 7("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":1269)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("D:\Git\gowin\polyphony_minesweeper\src\.\LEDMatrixAB_m.v":1281)
+Compiling module 'timer(COUNT_MAX=3375000)'("D:\Git\gowin\polyphony_minesweeper\src\top.sv":187)
+WARN  (EX3791) : Expression size 23 truncated to fit in target size 22("D:\Git\gowin\polyphony_minesweeper\src\top.sv":201)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("D:\Git\gowin\polyphony_minesweeper\src\top.sv":145)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input sw2 is unused("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":7)
-WARN  (CV0016) : Input rotary_SW is unused("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":10)
-WARN  (CV0016) : Input rotary2_SW is unused("D:\Git\gowin\PolyphonyMatrix_MineSweaper\src\top.sv":13)
+WARN  (CV0016) : Input sw2 is unused("D:\Git\gowin\polyphony_minesweeper\src\top.sv":7)
+WARN  (CV0016) : Input rotary2_SW is unused("D:\Git\gowin\polyphony_minesweeper\src\top.sv":13)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -56,6 +57,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\gwsynthesis\LEDMatrix.vg" completed
-[100%] Generate report file "D:\Git\gowin\PolyphonyMatrix_MineSweaper\impl\gwsynthesis\LEDMatrix_syn.rpt.html" completed
+[95%] Generate netlist file "D:\Git\gowin\polyphony_minesweeper\impl\gwsynthesis\LEDMatrix.vg" completed
+[100%] Generate report file "D:\Git\gowin\polyphony_minesweeper\impl\gwsynthesis\LEDMatrix_syn.rpt.html" completed
 GowinSynthesis finish
