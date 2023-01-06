@@ -1,40 +1,35 @@
 [
  {
-  "InstFile" : "E:/git/polyphony_minesweeper/src/top.sv",
+  "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
   "InstLine" : 3,
   "InstName" : "top",
-  "ModuleFile" : "E:/git/polyphony_minesweeper/src/top.sv",
+  "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
   "ModuleLine" : 3,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "E:/git/polyphony_minesweeper/src/top.sv",
+    "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
     "InstLine" : 116,
     "InstName" : "inst_2",
-    "ModuleFile" : "E:/git/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
+    "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
     "ModuleLine" : 1,
     "ModuleName" : "LEDMatrixAB_m",
     "SubInsts" : [
      {
-<<<<<<< HEAD
       "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
-      "InstLine" : 442,
-=======
-      "InstFile" : "E:/git/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
-      "InstLine" : 436,
->>>>>>> 79482f08980a7450fe328a9b2d5caaf3fadbd3e5
-      "InstName" : "m_main_ci_array736",
-      "ModuleFile" : "E:/git/polyphony_minesweeper/src/polyphony_out.v",
+      "InstLine" : 465,
+      "InstName" : "m_main_cj_array746",
+      "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/polyphony_out.v",
       "ModuleLine" : 2,
       "ModuleName" : "BidirectionalSinglePortRam"
      }
     ]
    },
    {
-    "InstFile" : "E:/git/polyphony_minesweeper/src/top.sv",
+    "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
     "InstLine" : 139,
     "InstName" : "inst_1",
-    "ModuleFile" : "E:/git/polyphony_minesweeper/src/top.sv",
+    "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/top.sv",
     "ModuleLine" : 187,
     "ModuleName" : "timer"
    }
