@@ -17,7 +17,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
-      "InstLine" : 436,
+      "InstLine" : 442,
       "InstName" : "m_main_ci_array736",
       "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/polyphony_out.v",
       "ModuleLine" : 2,

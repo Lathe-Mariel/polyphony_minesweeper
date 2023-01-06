@@ -313,24 +313,36 @@ module LEDMatrixAB_m
         m_main_ci_unnamed607 = 4;
       end
       5: begin
-        m_main_ci_unnamed607 = 5;
+        m_main_ci_unnamed607 = 4;
       end
       6: begin
-        m_main_ci_unnamed607 = 6;
+        m_main_ci_unnamed607 = 5;
       end
       7: begin
-        m_main_ci_unnamed607 = 7;
+        m_main_ci_unnamed607 = 5;
       end
       8: begin
-        m_main_ci_unnamed607 = 8;
+        m_main_ci_unnamed607 = 6;
       end
       9: begin
+        m_main_ci_unnamed607 = 6;
+      end
+      10: begin
+        m_main_ci_unnamed607 = 7;
+      end
+      11: begin
+        m_main_ci_unnamed607 = 7;
+      end
+      12: begin
+        m_main_ci_unnamed607 = 8;
+      end
+      13: begin
         m_main_ci_unnamed607 = 15;
       end
     endcase
   end
   endfunction
-  assign interval = 5400;
+  assign interval = 600;
   assign m_main_ci_antiChatter_RESW13 = (m_main_ci_antiChatter_RESW12 + 1);
   assign m_main_ci_antiChatter_RESW15 = m_main_ci_c633 ? m_main_ci_antiChatter_RESW13 : m_main_ci_c761 ? 0 : 'bz;
   assign m_main_ci_c1040 = !m_main_ci_c621;
@@ -359,7 +371,7 @@ module LEDMatrixAB_m
   assign m_main_ci_c634 = (m_main_ci_antiChatter_RESW15 > 10);
   assign m_main_ci_c638 = (m_main_ci_t637 != 0);
   assign m_main_ci_c643 = (m_main_ci_t642 != 0);
-  assign m_main_ci_c648 = (m_main_ci_counter6083 < 10);
+  assign m_main_ci_c648 = (m_main_ci_counter6083 < 14);
   assign m_main_ci_c650 = (m_main_ci_j4 < 8);
   assign m_main_ci_c655 = (m_main_ci_t654 > m_main_ci_lightLevel);
   assign m_main_ci_c738 = (!m_main_ci_c623 && m_main_ci_c625);
@@ -380,9 +392,9 @@ module LEDMatrixAB_m
   assign m_main_ci_c769 = (m_main_ci_c648 && m_main_ci_c650);
   assign m_main_ci_c770 = (m_main_ci_c769 && m_main_ci_c655);
   assign m_main_ci_c771 = (m_main_ci_c648 && m_main_ci_c617_inl1);
-  assign m_main_ci_c772 = (m_main_ci_c752 || m_main_ci_c753);
-  assign m_main_ci_c773 = (m_main_ci_c772 || m_main_ci_c751);
-  assign m_main_ci_c774 = (m_main_ci_c757 || m_main_ci_c759);
+  assign m_main_ci_c772 = (m_main_ci_c751 || m_main_ci_c752);
+  assign m_main_ci_c773 = (m_main_ci_c772 || m_main_ci_c753);
+  assign m_main_ci_c774 = (m_main_ci_c759 || m_main_ci_c757);
   assign m_main_ci_c775 = (m_main_ci_c774 || m_main_ci_c758);
   assign m_main_ci_counter6084 = (m_main_ci_counter6083 + 1);
   assign m_main_ci_currentLine5 = (m_main_ci_currentLine4 | m_main_ci_t656);
@@ -602,14 +614,14 @@ module LEDMatrixAB_m
         m_main_ci_frameBuffer_addr <= 14;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 2;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S15;
       end
       LEDMatrixAB_m_main_ci_b1_S15: begin
         m_main_ci_frameBuffer_addr <= 15;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 2;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S16;
       end
       LEDMatrixAB_m_main_ci_b1_S16: begin
@@ -651,21 +663,21 @@ module LEDMatrixAB_m
         m_main_ci_frameBuffer_addr <= 21;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 4;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S22;
       end
       LEDMatrixAB_m_main_ci_b1_S22: begin
         m_main_ci_frameBuffer_addr <= 22;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 4;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S23;
       end
       LEDMatrixAB_m_main_ci_b1_S23: begin
         m_main_ci_frameBuffer_addr <= 23;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 4;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S24;
       end
       LEDMatrixAB_m_main_ci_b1_S24: begin
@@ -707,21 +719,21 @@ module LEDMatrixAB_m
         m_main_ci_frameBuffer_addr <= 29;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 6;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S30;
       end
       LEDMatrixAB_m_main_ci_b1_S30: begin
         m_main_ci_frameBuffer_addr <= 30;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 6;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S31;
       end
       LEDMatrixAB_m_main_ci_b1_S31: begin
         m_main_ci_frameBuffer_addr <= 31;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 6;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S32;
       end
       LEDMatrixAB_m_main_ci_b1_S32: begin
@@ -763,21 +775,21 @@ module LEDMatrixAB_m
         m_main_ci_frameBuffer_addr <= 37;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 8;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S38;
       end
       LEDMatrixAB_m_main_ci_b1_S38: begin
         m_main_ci_frameBuffer_addr <= 38;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 8;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S39;
       end
       LEDMatrixAB_m_main_ci_b1_S39: begin
         m_main_ci_frameBuffer_addr <= 39;
         m_main_ci_frameBuffer_we <= 1;
         m_main_ci_frameBuffer_req <= 1;
-        m_main_ci_frameBuffer_d <= 33;
+        m_main_ci_frameBuffer_d <= 8;
         m_main_ci_state <= LEDMatrixAB_m_main_ci_b1_S40;
       end
       LEDMatrixAB_m_main_ci_b1_S40: begin
@@ -998,15 +1010,15 @@ module LEDMatrixAB_m
           m_main_ci_oldRE_a5 <= rotary_a;
           /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
           /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
-          /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
-          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
+          /* m_main_ci_c772 <= (m_main_ci_c751 || m_main_ci_c752); */
+          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c753); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
         end else if (m_main_ci_c739) begin
           m_main_ci_oldRE_a5 <= rotary_a;
           /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
           /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
-          /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
-          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
+          /* m_main_ci_c772 <= (m_main_ci_c751 || m_main_ci_c752); */
+          /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c753); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
         end
       end
@@ -1014,8 +1026,8 @@ module LEDMatrixAB_m
         m_main_ci_oldRE_a5 <= rotary_a;
         /* m_main_ci_c1043 <= ((m_main_ci_c1041 && m_main_ci_c738) || (m_main_ci_c1041 && m_main_ci_c739)); */
         /* m_main_ci_xvalue5 <= m_main_ci_c751 ? m_main_ci_xvalue2 : m_main_ci_c752 ? m_main_ci_xvalue3 : m_main_ci_c753 ? m_main_ci_xvalue4 : 'bz; */
-        /* m_main_ci_c772 <= (m_main_ci_c752 || m_main_ci_c753); */
-        /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c751); */
+        /* m_main_ci_c772 <= (m_main_ci_c751 || m_main_ci_c752); */
+        /* m_main_ci_c773 <= (m_main_ci_c772 || m_main_ci_c753); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b7_S1;
       end
       LEDMatrixAB_m_main_ci_L1_b7_S1: begin
@@ -1071,14 +1083,14 @@ module LEDMatrixAB_m
           m_main_ci_oldRE2_a5 <= rotary2_a;
           /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
           /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
-          /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+          /* m_main_ci_c774 <= (m_main_ci_c759 || m_main_ci_c757); */
           /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
         end else if (m_main_ci_c741) begin
           m_main_ci_oldRE2_a5 <= rotary2_a;
           /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
           /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
-          /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+          /* m_main_ci_c774 <= (m_main_ci_c759 || m_main_ci_c757); */
           /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
           m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
         end
@@ -1087,7 +1099,7 @@ module LEDMatrixAB_m
         m_main_ci_oldRE2_a5 <= rotary2_a;
         /* m_main_ci_c1047 <= ((m_main_ci_c1045 && m_main_ci_c740) || (m_main_ci_c1045 && m_main_ci_c741)); */
         /* m_main_ci_yvalue5 <= m_main_ci_c757 ? m_main_ci_yvalue2 : m_main_ci_c758 ? m_main_ci_yvalue3 : m_main_ci_c759 ? m_main_ci_yvalue4 : 'bz; */
-        /* m_main_ci_c774 <= (m_main_ci_c757 || m_main_ci_c759); */
+        /* m_main_ci_c774 <= (m_main_ci_c759 || m_main_ci_c757); */
         /* m_main_ci_c775 <= (m_main_ci_c774 || m_main_ci_c758); */
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L1_b12_S1;
       end
@@ -1240,7 +1252,7 @@ module LEDMatrixAB_m
         m_main_ci_state <= LEDMatrixAB_m_main_ci_L2_fortest20_S0;
       end
       LEDMatrixAB_m_main_ci_L2_fortest20_S0: begin
-        /* m_main_ci_c648 <= (m_main_ci_counter6083 < 10); */
+        /* m_main_ci_c648 <= (m_main_ci_counter6083 < 14); */
         if (m_main_ci_c648) begin
           row <= m_main_ci_t649;
           /* m_main_ci_lightLevel <= m_main_ci_unnamed607(m_main_ci_counter6083); */
