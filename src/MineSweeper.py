@@ -8,7 +8,16 @@ from data import FONT_DATA
 class LEDMatrixAB:
 
     def __init__(self, interval):
-        
+
+        self.stageParam:List[bit8]=[35,35,35,33,33,33,33,33,
+                                35,65,37,35,33,33,33,33,
+                                35,37,65,35,33,33,33,33,
+                                33,35,37,37,35,33,33,33,
+                                33,33,35,65,35,33,33,33,
+                                33,33,35,35,35,33,35,35,
+                                33,33,33,33,33,33,35,65,
+                                33,33,33,33,33,33,35,35]
+
         self.swA = Port(bool, 'in')
         self.swB = Port(bool, 'in')
         self.rotary_a = Port(bool, 'in')
@@ -30,16 +39,14 @@ class LEDMatrixAB:
 
     def main(self):
         time:bit32 = 72000                   #current time(unit:second)
-
-        frameBuffer:List[bit8]=[33,33,33,33,33,33,33,33,
-                                33, 6,33,33,33, 2, 2, 2,
-                                33,33, 0, 0, 0, 4, 4, 4,
-                                33,33,33, 2, 2, 6, 6, 6,
-                                33,33,33, 4,33, 8, 8, 8,
-                                33,33,33, 6,33,33,33,33,
-                                33,33,33, 6,33,33,33,33,
-                                33,33,33,33,33,33,33,33]
-                               
+        frameBuffer:List[bit8]=[35,35,35,33,33,33,33,33,
+                                35,65,37,35,33,33,33,33,
+                                35,37,65,35,33,33,33,33,
+                                33,35,37,37,35,33,33,33,
+                                33,33,35,65,35,33,33,33,
+                                33,33,35,35,35,33,35,35,
+                                33,33,33,33,33,33,35,65,
+                                33,33,33,33,33,33,35,35]
 
         oldRE_a:bit = 0    # keep RotaryEnchoder_a value
         oldRE2_a:bit = 0   # keep RotaryEnchoder2_a value
@@ -58,7 +65,8 @@ class LEDMatrixAB:
             if(self.swA.rd() == 0):
                 antiChatter_RESET += 1
                 if(antiChatter_RESET > 10):
-                    frameBuffer[63] = 0
+                    for i in range(64):
+                        frameBuffer[i] = self.stageParam[i]
                     antiChatter_RESET = 11
                     continue
             else:
@@ -67,7 +75,7 @@ class LEDMatrixAB:
             # Handling RotaryEnchoder
             if(oldRE_a != self.rotary_a.rd()):
                 untiChatter1 += 1
-                if(untiChatter1 > 10):
+                if(untiChatter1 > 14):
                     if(oldRE_a):
                         oldRE_a = self.rotary_a.rd()
                         untiChatter1 = 0
@@ -84,7 +92,7 @@ class LEDMatrixAB:
                 
             if(oldRE2_a != self.rotary2_a.rd()):
                 untiChatter2 += 1
-                if(untiChatter2 > 10):
+                if(untiChatter2 > 14):
                     if(oldRE2_a):
                         oldRE2_a = self.rotary2_a.rd()
                         untiChatter2 = 0
@@ -98,7 +106,7 @@ class LEDMatrixAB:
             else:
                 untiChatter2 = 0
                 oldRE2_a = self.rotary2_a.rd()
-# handling RotaryEnchoder1 SW
+# handling RotaryEnchoder1 SW(RESET)
             if(self.rotary_SW.rd() == 0):
                 antiChatter_RESW1 += 1
                 if(antiChatter_RESW1 > 10):
@@ -108,7 +116,6 @@ class LEDMatrixAB:
                 antiChatter_RESW1 = 0
                 self.boardLED2(0)
 
-
 # update frameBuffer
             prev_Cursor:bit6 = old_xvalue * 8 + old_yvalue
             if(frameBuffer[prev_Cursor] &  0b0000001):
@@ -117,6 +124,11 @@ class LEDMatrixAB:
                 frameBuffer[prev_Cursor] &= 0b011111
             
             cursor:bit6 = xvalue * 8 + yvalue
+            if(antiChatter_RESW1 > 10):
+                if(frameBuffer[cursor] >= 64):
+                    pass
+                    #GAME OVER
+                frameBuffer[cursor] &= 0b111110
             if(self.quaterSecondCLK.rd()):
                 frameBuffer[cursor] &= 0b011111
             else:
@@ -128,7 +140,7 @@ class LEDMatrixAB:
             self.boardLED1(self.quaterSecondCLK.rd())    # 1second blinker
 
 #MatrixLED Driver
-            for lightLevel in [0,1,2,3,4,4,5,5,6,6,7,7,8,15]:
+            for lightLevel in [0,1,1,2,2,2,3,3,3,3,4,4,4,4,4,5,6,7,8,15]:
                 currentLine = 0
                 self.row.wr(1 << loopCounter)
                 for j in range(8):
@@ -145,7 +157,7 @@ class LEDMatrixAB:
 
 
 
-m = LEDMatrixAB(600)    #2700
+m = LEDMatrixAB(300)    #2700
 
 @testbench
 def test(matrix_m):

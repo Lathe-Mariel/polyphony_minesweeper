@@ -17,8 +17,8 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Git/gowin/polyphony_minesweeper/src/./LEDMatrixAB_m.v",
-      "InstLine" : 465,
-      "InstName" : "m_main_cj_array746",
+      "InstLine" : 601,
+      "InstName" : "m_main_ci_array740",
       "ModuleFile" : "D:/Git/gowin/polyphony_minesweeper/src/polyphony_out.v",
       "ModuleLine" : 2,
       "ModuleName" : "BidirectionalSinglePortRam"

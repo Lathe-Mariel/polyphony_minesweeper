@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module name="top" Register="1" Lut="9">
-    <SubModule name="inst_2" Register="220" Alu="14" Lut="529">
-        <SubModule name="m_main_ci_array740" Register="6" Lut="20" Ssram="8"/>
+    <SubModule name="inst_2" Register="268" Alu="13" Lut="665">
+        <SubModule name="m_main_ci_array748" Register="6" Lut="20" Ssram="8"/>
     </SubModule>
     <SubModule name="inst_1" Register="23" Alu="21" Lut="8"/>
 </Module>
