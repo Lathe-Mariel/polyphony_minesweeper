@@ -4,7 +4,7 @@ Pythonを使った高位合成PolyphonyでMineSweeperを作りました．
 I made simple MineSweeper by using the Polyphony as high layer systhesis tool.  
 Source code is written by Python language.  
   
-ボードとして，GowinのFPGAが載っているTang Nano 9K(Sipeedf)を使いました．　　
+ボードとして，GowinのFPGAが載っているTang Nano 9K(Sipeedf)を使いました．  
 Tang Nano 9K is used for FPGA board in this project.  
   
 表示は8x8のマトリクスLEDに行います．  
@@ -25,7 +25,7 @@ Display is 8x8 Matrix LED.
  LEDMatrix.gprjがプロジェクトファイルです．
  
 # src/の中身
-　ソースコードはsrcフォルダにあります．
+　ソースコードはsrcフォルダにあります．  
   All source codes are located in src/ directory.  
 - MineSweeper.py　Pythonで書かれたソースコードです．Polyphonyコマンドに渡すと，高位合成されVerilog記述を得られます．
 - top.sv　SystemVerilogで記述されたトップモジュールです．手動で記述して作ります（現状では自動生成ツールなどはない）．
