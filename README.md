@@ -30,4 +30,5 @@ Display is 8x8 Matrix LED.
 - MineSweeper.py　Pythonで書かれたソースコードです．Polyphonyコマンドに渡すと，高位合成されVerilog記述を得られます．
 - top.sv　SystemVerilogで記述されたトップモジュールです．手動で記述して作ります（現状では自動生成ツールなどはない）．
 - top.cst　物理制約ファイルです．通常のFPGA開発と同じように使うボードに合わせて手動で記述します．
+- top_v2.cst　Motor Driver Board for Tang Nano 9K Ver 0.2用の物理制約ファイルです．
 - polyphony_out.v　polyphonyコマンドを実行して高位合成すると自動で生成されるVerilogファイルです．
